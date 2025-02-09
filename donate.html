@@ -65,7 +65,7 @@
   <h1>Donate to EarthCare Alliance</h1>
   <p>Support our mission to combat climate change through your generous donation.</p>
 
-  <form action="process-donation.php" method="POST">
+  <form id="donation-form">
     <label for="name">Name:</label>
     <input type="text" id="name" name="name" placeholder="Enter your full name" required>
 
@@ -81,9 +81,10 @@
       <option value="mastercard">MasterCard</option>
       <option value="paypal">PayPal</option>
       <option value="visa">Visa</option>
+      <option value="mpesa-express">M-Pesa Express</option>
     </select>
 
-    <button type="submit">Donate Now</button>
+    <button type="button" onclick="processDonation()">Donate Now</button>
   </form>
 
   <div class="payment-icons">
@@ -92,5 +93,44 @@
     <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/PayPal_logo.svg" alt="PayPal Logo">
     <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Visa_2021.svg" alt="Visa Logo">
   </div>
+
+  <script>
+    function processDonation() {
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const amount = document.getElementById('amount').value;
+      const paymentMethod = document.getElementById('payment-method').value;
+
+      if (!name || !email || !amount || !paymentMethod) {
+        alert('Please fill in all the fields before proceeding.');
+        return;
+      }
+
+      let paymentMessage = `Thank you, ${name}, for choosing to support EarthCare Alliance.`;
+      switch (paymentMethod) {
+        case 'mpesa':
+          paymentMessage += ` Please send KES equivalent of $${amount} to our M-Pesa PayBill number: 123456.`;
+          break;
+        case 'mastercard':
+          paymentMessage += ` You will be redirected to a secure payment portal to complete your $${amount} donation using MasterCard.`;
+          break;
+        case 'paypal':
+          paymentMessage += ` Redirecting to PayPal for your $${amount} donation.`;
+          break;
+        case 'visa':
+          paymentMessage += ` You will be redirected to a secure Visa payment page to complete your $${amount} donation.`;
+          break;
+        case 'mpesa-express':
+          paymentMessage += ` Confirm your M-Pesa Express payment request on your mobile for $${amount}.`;
+          break;
+        default:
+          paymentMessage += ' Please choose a valid payment option.';
+      }
+
+      alert(paymentMessage);
+      // Add logic to redirect users to respective payment gateways or initiate API requests if available
+    }
+  </script>
 </body>
 </html>
+
