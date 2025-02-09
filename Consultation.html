@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request Consultation</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: white;
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    header {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      padding: 20px;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      filter: brightness(30%) contrast(70%);
+    }
+
+    .content {
+      position: relative;
+      top: 20vh;
+      text-align: center;
+    }
+
+    form {
+      display: inline-block;
+      text-align: left;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      border-radius: 8px;
+      color: white;
+      max-width: 400px;
+      width: 100%;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+    }
+
+    button {
+      background-color: #2e7d32;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #004d40;
+    }
+
+    .back-home {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-decoration: none;
+      z-index: 1;
+    }
+
+    .back-home img {
+      width: 40px;
+      height: 40px;
+      transition: transform 0.3s;
+    }
+
+    .back-home img:hover {
+      transform: scale(1.1);
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #2e7d32;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .back-link:hover {
+      background-color: #004d40;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Request a Consultation</h1>
+  </header>
+
+  <div class="content">
+    <p>Thank you for choosing EarthCare Alliance Consultancy. Fill in your details, and we'll get back to you with expert guidance on climate change and carbon credit solutions.</p>
+    <form action="mailto:kiprutoamos97@gmail.com" method="POST" enctype="text/plain">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="Full Name" placeholder="Enter your full name" required>
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="Email Address" placeholder="Enter your email" required>
+
+      <label for="topic">Consultation Topic:</label>
+      <select id="topic" name="Consultation Topic" required>
+        <option value="">Select a Topic</option>
+        <option value="Environmental Management">Environmental Management</option>
+        <option value="Climate Change Mitigation">Climate Change Mitigation</option>
+        <option value="Climate Change Adaptation">Climate Change Adaptation</option>
+        <option value="Carbon Credits">Carbon Credits</option>
+        <option value="Carbon Offsets">Carbon Offsets</option>
+      </select>
+
+      <label for="message">Additional Information or Questions:</label>
+      <textarea id="message" name="Message" placeholder="Provide details about your consultation needs..." rows="4"></textarea>
+
+      <button type="submit">Request Consultation</button>
+    </form>
+    <a href="index.html" class="back-link">Back to Home</a>
+  </div>
+
+  <video autoplay muted loop id="background-video">
+    <source src="Hills.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <script>
+    // Set slow-motion playback speed
+    const video = document.getElementById('background-video');
+    video.playbackRate = 0.5;
+  </script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Downloads | EarthCare Alliance</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2e7d32;
+      margin-top: 40px;
+    }
+
+    p {
+      text-align: center;
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 40px;
+    }
+
+    .downloads-container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .download-item {
+      padding: 15px;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .download-item:last-child {
+      border-bottom: none;
+    }
+
+    a.download-link {
+      background-color: #2e7d32;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: 600;
+    }
+
+    a.download-link:hover {
+      background-color: #1b5e20;
+    }
+
+    .back-home {
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+    }
+
+    .back-home img {
+      width: 40px;
+      height: 40px;
+      transition: transform 0.3s;
+    }
+
+    .back-home img:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <h1>Downloads</h1>
+  <p>Find resources and downloadable content for EarthCare Alliance Consultancy.</p>
+
+  <div class="downloads-container">
+    <div class="download-item">
+      <p>EarthCare Alliance Company Profile</p>
+      <a href="/files/EarthCare_Company_Profile.pdf" download class="download-link">Download</a>
+    </div>
+    <div class="download-item">
+      <p>Climate Change Impact Guide (2025 Edition)</p>
+      <a href="What is a Carbon Footprint.pdf" download class="download-link">Download</a>
+    </div>
+    <div class="download-item">
+      <p>Tree Planting Training Manual</p>
+      <a href="/files/Tree_Planting_Manual.pdf" download class="download-link">Download</a>
+    </div>
+  </div>
+
+  <div class="back-home">
+    <a href="index.html">
+      <img src="https://img.icons8.com/ios-filled/50/2e7d32/home.png" alt="Back to Home">
+    </a>
+  </div>
+</body>
+</html>
