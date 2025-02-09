@@ -49,16 +49,6 @@
     button:hover {
       background: #1b5e20;
     }
-    .payment-icons {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin-top: 30px;
-    }
-    .payment-icons img {
-      width: 40px;
-      height: auto;
-    }
   </style>
 </head>
 <body>
@@ -81,21 +71,13 @@
       <option value="mastercard">MasterCard</option>
       <option value="paypal">PayPal</option>
       <option value="visa">Visa</option>
-      <option value="mpesa-express">M-Pesa Express</option>
     </select>
 
     <button type="button" onclick="processDonation()">Donate Now</button>
   </form>
 
-  <div class="payment-icons">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/M-PESA_logo.svg/1024px-M-PESA_logo.svg.png" alt="M-Pesa Logo">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="MasterCard Logo">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/PayPal_logo.svg" alt="PayPal Logo">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Visa_2021.svg" alt="Visa Logo">
-  </div>
-
   <script>
-    function processDonation() {
+    async function processDonation() {
       const name = document.getElementById('name').value;
       const email = document.getElementById('email').value;
       const amount = document.getElementById('amount').value;
@@ -106,31 +88,34 @@
         return;
       }
 
-      let paymentMessage = `Thank you, ${name}, for choosing to support EarthCare Alliance.`;
-      switch (paymentMethod) {
-        case 'mpesa':
-          paymentMessage += ` Please send KES equivalent of $${amount} to our M-Pesa PayBill number: 123456.`;
-          break;
-        case 'mastercard':
-          paymentMessage += ` You will be redirected to a secure payment portal to complete your $${amount} donation using MasterCard.`;
-          break;
-        case 'paypal':
-          paymentMessage += ` Redirecting to PayPal for your $${amount} donation.`;
-          break;
-        case 'visa':
-          paymentMessage += ` You will be redirected to a secure Visa payment page to complete your $${amount} donation.`;
-          break;
-        case 'mpesa-express':
-          paymentMessage += ` Confirm your M-Pesa Express payment request on your mobile for $${amount}.`;
-          break;
-        default:
-          paymentMessage += ' Please choose a valid payment option.';
-      }
+      const paymentMessage = `Thank you, ${name}, for choosing to support EarthCare Alliance. You will be redirected to a secure payment portal to complete your $${amount} donation using ${paymentMethod}.`;
 
       alert(paymentMessage);
-      // Add logic to redirect users to respective payment gateways or initiate API requests if available
+
+      // Notify via SMS and Email
+      const notificationData = {
+        name,
+        email,
+        amount,
+        paymentMethod,
+        phone: "+254720576822",
+        adminEmail: "kiprutoamos1997@gmail.com"
+      };
+
+      try {
+        await fetch("https://your-backend-api-url.com/notify-donation", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(notificationData),
+        });
+        alert("Donation notification sent successfully.");
+      } catch (error) {
+        alert("Failed to send notification. Please try again.");
+        console.error("Error:", error);
+      }
     }
   </script>
 </body>
 </html>
+
 
