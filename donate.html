@@ -49,11 +49,24 @@
     button:hover {
       background: #1b5e20;
     }
+    .info-section {
+      background: white;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 800px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: left;
+    }
+    .info-section h2 {
+      color: #2e7d32;
+      margin-bottom: 10px;
+    }
   </style>
 </head>
 <body>
   <h1>Donate to EarthCare Alliance</h1>
-  <p>Support our mission to combat climate change through your generous donation.</p>
+  <p>Support our mission to combat climate change and conserve wetlands through your generous donation.</p>
 
   <form id="donation-form">
     <label for="name">Name:</label>
@@ -75,6 +88,27 @@
 
     <button type="button" onclick="processDonation()">Donate Now</button>
   </form>
+
+  <!-- Additional Information Sections -->
+  <div class="info-section">
+    <h2>Funding Options</h2>
+    <p>Your support can take various forms, including one-time donations, monthly contributions, or corporate sponsorships. Every contribution helps drive impactful climate solutions.</p>
+  </div>
+
+  <div class="info-section">
+    <h2>Project Breakdown</h2>
+    <p>Your funds will be used to support activities such as wetland restoration, community training on sustainable agricultural practices, and the deployment of climate monitoring technologies. Detailed project reports will be shared with donors.</p>
+  </div>
+
+  <div class="info-section">
+    <h2>Sponsorship Tiers</h2>
+    <p>We offer various sponsorship levels with benefits such as recognition on our website, project updates, and personalized engagement opportunities. Contact us for more information.</p>
+  </div>
+
+  <div class="info-section">
+    <h2>Partnership Opportunities</h2>
+    <p>We invite corporations and organizations to partner with us in advancing climate change solutions. Get involved through CSR initiatives and collaborative environmental projects.</p>
+  </div>
 
   <script>
     async function processDonation() {
@@ -117,5 +151,3 @@
   </script>
 </body>
 </html>
-
-
