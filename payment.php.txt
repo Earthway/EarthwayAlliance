@@ -1,0 +1,54 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  // Retrieve form data
+  $name = $_POST['name'];
+  $email = $_POST['email'];
+  $amount = $_POST['amount'];
+  $paymentMethod = $_POST['payment-method'];
+
+  if (!empty($name) && !empty($email) && !empty($amount) && !empty($paymentMethod)) {
+    // Example payment method processing
+    switch ($paymentMethod) {
+      case 'mpesa':
+        echo "Processing M-Pesa payment for $name of $$amount...";
+        // Add your M-Pesa API integration here
+        break;
+
+      case 'mastercard':
+        echo "Processing MasterCard payment for $name of $$amount...";
+        // Add your MasterCard payment API integration here
+        break;
+
+      case 'paypal':
+        echo "Processing PayPal payment for $name of $$amount...";
+        // Add your PayPal API integration here
+        break;
+
+      case 'visa':
+        echo "Processing Visa payment for $name of $$amount...";
+        // Add your Visa payment API integration here
+        break;
+
+      default:
+        echo "Invalid payment method selected.";
+        break;
+    }
+
+    // Send a confirmation email to the donor
+    $subject = "Thank you for your donation to EarthCare Alliance!";
+    $message = "Dear $name,\n\nThank you for your generous donation of $$amount.\nWe appreciate your support.\n\nBest Regards,\nEarthCare Alliance";
+    $headers = "From: donations@earthcarealliance.org";
+
+    if (mail($email, $subject, $message, $headers)) {
+      echo "A confirmation email has been sent to $email.";
+    } else {
+      echo "Failed to send confirmation email.";
+    }
+
+  } else {
+    echo "Please fill all fields correctly.";
+  }
+} else {
+  echo "Invalid request method.";
+}
+?>
