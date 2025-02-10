@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us</title>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>EarthCare Alliance - About Us</title>
+
   <style>
     * {
       margin: 0;
@@ -12,88 +14,73 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Arial', sans-serif;
       color: white;
-      position: relative;
-      height: 100vh;
-      overflow: hidden;
+      background-color: #0a0a0a;
     }
 
     header {
-      position: absolute;
-      top: 0;
-      width: 100%;
+      background-color: #003300;
       padding: 20px;
       text-align: center;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 1;
     }
 
-    video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1;
-      filter: brightness(50%);
+    header h1 {
+      color: #00ff00;
+      font-size: 2.5rem;
+      font-weight: bold;
     }
 
-    .content {
-      position: relative;
-      top: 30vh;
+    nav {
+      background-color: #004d00;
+      padding: 10px;
       text-align: center;
     }
 
-    .back-home {
-      position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
+    nav a {
+      color: white;
       text-decoration: none;
-      z-index: 1;
+      margin: 0 15px;
+      font-weight: bold;
     }
 
-    .back-home img {
-      width: 40px;
-      height: 40px;
-      transition: transform 0.3s;
-    }
-
-    .back-home img:hover {
-      transform: scale(1.1);
-    }
-
-    /* Calculator container */
-    .calculator-container {
-      position: absolute;
-      top: 100px;
-      left: 0px;
-      background-color: rgba(0, 0, 0, 0.7);
-      padding: 15px;
-      border-radius: 10px;
-      width: 250px;
-      z-index: 2;
-    }
-
-    .calculator-container h2 {
-      text-align: center;
+    nav a:hover {
       color: #00ff00;
     }
 
-    .calculator-container label {
-      display: block;
-      margin: 10px 0 5px;
+    .section {
+      padding: 40px;
+      text-align: center;
+    }
+
+    .section h2 {
+      font-size: 2.2rem;
+      color: #00ff00;
+      margin-bottom: 20px;
+    }
+
+    .section p {
+      font-size: 1rem;
+      line-height: 1.6;
       color: white;
     }
 
-    .calculator-container input[type="number"] {
+    .calculator-container {
+      padding: 20px;
+      background-color: #004d00;
+      border-radius: 10px;
+      width: 300px;
+      margin: 20px auto;
+    }
+
+    .calculator-container input {
       width: 100%;
-      padding: 8px;
+      padding: 10px;
       margin-bottom: 10px;
       border-radius: 5px;
       border: none;
+      background-color: #222;
+      color: white;
     }
 
     .calculator-container button {
@@ -111,49 +98,61 @@
       background-color: #00cc00;
     }
 
-    .calculator-container p {
+    .footer {
+      background-color: #002200;
+      padding: 10px;
       text-align: center;
-      color: #00ff00;
-      font-weight: bold;
+      color: white;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>About Us</h1>
+    <h1>EarthCare Alliance Consultancy</h1>
   </header>
 
-  <div class="content">
-    <p>Welcome to the About Us page of EarthCare Alliance Consultancy.</p>
-  </div>
+  <nav>
+    <a href="#mission">Mission</a>
+    <a href="#vision">Vision</a>
+    <a href="#our-story">Our Story</a>
+    <a href="#calculator">Carbon Calculator</a>
+  </nav>
 
-  <div class="calculator-container">
+  <section id="mission" class="section">
+    <h2>Our Mission</h2>
+    <p>To empower communities and organizations to protect and conserve wetland ecosystems, combat climate change, and promote environmental sustainability through strategic solutions, education, and innovation.</p>
+  </section>
+
+  <section id="vision" class="section">
+    <h2>Our Vision</h2>
+    <p>We envision a world where wetlands are thriving, communities are resilient, and the environment is preserved for future generations through inclusive, sustainable practices and innovative climate action.</p>
+  </section>
+
+  <section id="our-story" class="section">
+    <h2>Our Story</h2>
+    <p>EarthCare Alliance was founded with a passion for protecting Kenya's unique ecosystems and addressing the urgent challenges posed by climate change. Our journey began with a dedicated team of environmentalists and community leaders who recognized the power of collaborative solutions. Since then, we have grown into a trusted consultancy offering innovative strategies and practical solutions for climate resilience and ecosystem restoration. By focusing on wetland conservation and empowering local communities, we are building a future that is both sustainable and inclusive.</p>
+  </section>
+
+  <section id="calculator" class="section">
     <h2>Carbon Credits Calculator</h2>
-    <label for="hectares">Enter Land Area (in hectares):</label>
-    <input type="number" id="hectares" placeholder="e.g., 1">
+    <div class="calculator-container">
+      <label for="hectares">Enter Land Area (in hectares):</label>
+      <input type="number" id="hectares" placeholder="e.g., 1" min="0.01" step="0.01" required>
 
-    <label for="carbon-rate">Carbon Credits per Hectare:</label>
-    <input type="number" id="carbon-rate" value="2.5" placeholder="Default is 2.5 credits">
+      <label for="carbon-rate">Carbon Credits per Hectare:</label>
+      <input type="number" id="carbon-rate" value="2.5" min="0.01" step="0.01" required>
 
-    <button onclick="calculateCarbonCredits()">Calculate Carbon Credits</button>
+      <button onclick="calculateCarbonCredits()">Calculate Carbon Credits</button>
 
-    <p id="result">Use the calculator to estimate carbon credits of a hectare of land.</p>
-  </div>
+      <p id="result">Use the calculator to estimate carbon credits for a hectare of land.</p>
+    </div>
+  </section>
 
-  <video autoplay muted loop id="background-video">
-    <source src="Hills.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-
-  <a href="index.html" class="back-home">
-    <img src="https://img.icons8.com/ios-filled/50/2e7d32/home.png" alt="Back to Home">
-  </a>
+  <footer class="footer">
+    <p>&copy; 2025 EarthCare Alliance. All Rights Reserved.</p>
+  </footer>
 
   <script>
-    // Set slow-motion playback speed
-    const video = document.getElementById('background-video');
-    video.playbackRate = 0.5;
-
     // Carbon Credits Calculator
     function calculateCarbonCredits() {
       const hectares = parseFloat(document.getElementById('hectares').value);
@@ -161,6 +160,11 @@
 
       if (isNaN(hectares) || hectares <= 0) {
         alert('Please enter a valid number for hectares.');
+        return;
+      }
+
+      if (isNaN(carbonRate) || carbonRate <= 0) {
+        alert('Please enter a valid carbon rate.');
         return;
       }
 
