@@ -124,6 +124,25 @@ footer {
   background-color: #333;
   color: white;
 }
+#slider {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 80%; /* Adjust as needed */
+  max-width: 600px; /* Optional: Limits width for better readability */
+}
+
+.slide {
+  display: none;
+  font-size: 1.5rem; /* Adjust text size */
+  padding: 20px;
+}
+
+.slide.visible {
+  display: block;
+}
 
   </style>
 </head>
