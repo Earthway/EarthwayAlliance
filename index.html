@@ -15,24 +15,31 @@
       padding: 0;
       box-sizing: border-box;
     }
-    body {
+
+    html, body {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
       font-family: 'Poppins', sans-serif;
       line-height: 1.6;
       background-color: #e8f5e9;
       color: #2e2e2e;
     }
+
     header {
       background-color: #2e7d32;
       padding: 15px 0;
       text-align: center;
       color: white;
     }
+
     nav {
       display: flex;
       justify-content: center;
       gap: 20px;
       align-items: center;
     }
+
     nav a {
       color: white;
       text-decoration: none;
@@ -40,11 +47,17 @@
       padding: 10px 15px;
       transition: background 0.3s, transform 0.2s;
     }
+
     nav a:hover {
       background: #ffa500;
       border-radius: 5px;
       transform: scale(1.1);
     }
+
+    main {
+      flex: 1;
+    }
+
     .hero {
       height: 100vh;
       display: flex;
@@ -56,6 +69,7 @@
       position: relative;
       overflow: hidden;
     }
+
     video {
       position: absolute;
       top: 50%;
@@ -66,6 +80,7 @@
       z-index: -1;
       filter: brightness(0.5);
     }
+
     .slide {
       position: absolute;
       top: 20%;
@@ -78,9 +93,11 @@
       text-shadow: 2px 2px 5px #000;
       transition: opacity 1.5s ease-in-out;
     }
+
     .visible {
       opacity: 1;
     }
+
     .consult-button, .donate-button {
       padding: 15px 30px;
       border-radius: 25px;
@@ -90,6 +107,7 @@
       font-weight: bold;
       cursor: pointer;
     }
+
     .consult-button {
       background: #FFD700;
       color: #003366;
@@ -97,6 +115,7 @@
       bottom: 20%;
       left: 10%;
     }
+
     .donate-button {
       background: #ff5722;
       color: white;
@@ -104,41 +123,46 @@
       bottom: 20%;
       right: 10%;
     }
+
     .consult-button:hover, .donate-button:hover {
       transform: scale(1.05);
     }
 
-    /* Partners Section */
     .partners-section {
       background-color: #f1f8e9;
       padding: 50px 20px;
       text-align: center;
     }
+
     .partners-section h2 {
       color: #2e7d32;
       font-size: 2.5rem;
       margin-bottom: 30px;
     }
+
     .partners-logos {
       display: flex;
       justify-content: center;
       gap: 40px;
       flex-wrap: wrap;
     }
+
     .partners-logos img {
       width: 80px;
       height: auto;
       transition: transform 0.3s;
     }
+
     .partners-logos img:hover {
       transform: scale(1.1);
     }
+
     footer {
       background: #2e7d32;
       color: white;
       text-align: center;
       padding: 15px;
-      margin-top: 20px;
+      margin-top: auto;
     }
   </style>
 </head>
@@ -159,24 +183,24 @@
     </nav>
   </header>
 
-  <!-- Hero Section with Sliding Points -->
- <video autoplay muted loop>
-  <source src="Forest.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+  <main>
+    <section class="hero">
+      <video autoplay muted loop>
+        <source src="Forest.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
 
-    <div id="slider">
-      <div class="slide visible">Request consultation to understand carbon credit opportunities</div>
-      <div class="slide">Discover sustainable climate solutions tailored for your business</div>
-      <div class="slide">Get expert advice on climate risk mitigation and adaptation</div>
-      <div class="slide">Navigate carbon markets with confidence</div>
-    </div>
+      <div id="slider">
+        <div class="slide visible">Request consultation to understand carbon credit opportunities</div>
+        <div class="slide">Discover sustainable climate solutions tailored for your business</div>
+        <div class="slide">Get expert advice on climate risk mitigation and adaptation</div>
+        <div class="slide">Navigate carbon markets with confidence</div>
+      </div>
 
-    <a href="Consultation.html" class="consult-button">Request Consultation</a>
-    <a href="donate.html" class="donate-button">Donate Now</a>
-  </section>
-
-  
+      <a href="Consultation.html" class="consult-button">Request Consultation</a>
+      <a href="donate.html" class="donate-button">Donate Now</a>
+    </section>
+  </main>
 
   <footer>
     &copy; 2025 EarthWay Alliance | All Rights Reserved
@@ -197,7 +221,6 @@
     }
 
     setInterval(nextSlide, 4000);
-
     showSlide(currentSlide);
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
@@ -206,4 +229,3 @@
   </script>
 </body>
 </html>
-
