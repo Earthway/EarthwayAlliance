@@ -3,171 +3,81 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Earthway Alliance - Climate Change and Carbon Credit Consultancy">
-  <meta name="author" content="EarthWay Alliance">
-  <meta name="keywords" content="Climate Change, Carbon Credits, Sustainability, Consultation, Environmental Solutions">
+  <meta name="description" content="EarthWay Alliance - Climate Change and Carbon Credit Consultancy">
   <title>EarthWay Alliance | Climate Solutions</title>
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    html, body { height: 100%; overflow: hidden; }
 
-    html, body {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      font-family: 'Poppins', sans-serif;
-      line-height: 1.6;
-      background-color: #e8f5e9;
-      color: #2e2e2e;
-    }
-
-    header {
-      background-color: #2e7d32;
-      padding: 15px 0;
-      text-align: center;
-      color: white;
-    }
-
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      align-items: center;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 10px 15px;
-      transition: background 0.3s, transform 0.2s;
-    }
-
-    nav a:hover {
-      background: #ffa500;
-      border-radius: 5px;
-      transform: scale(1.1);
-    }
-
-    main {
-      flex: 1;
-    }
-
+    /* Hero Section */
     .hero {
       height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
       text-align: center;
       position: relative;
       overflow: hidden;
+      color: white;
     }
 
+    /* Background Video */
     video {
       position: absolute;
-      top: 50%;
-      left: 50%;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transform: translate(-50%, -50%);
       z-index: -1;
-      filter: brightness(0.5);
     }
 
-    .hero-content {
+    /* Content */
+    .content {
       position: relative;
-      z-index: 2;
+      z-index: 1;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
     }
 
-    .hero h1 {
-      font-size: 2.5rem;
-      font-weight: bold;
-      text-shadow: 2px 2px 5px #000;
+    h1 {
+      font-size: 3rem;
+      font-weight: 600;
     }
 
-    .consult-button, .donate-button {
-      padding: 15px 30px;
-      border-radius: 25px;
-      text-decoration: none;
-      display: inline-block;
-      transition: background 0.3s, transform 0.2s;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .consult-button {
-      background: #FFD700;
-      color: #003366;
-    }
-
-    .donate-button {
-      background: #ff5722;
-      color: white;
-    }
-
-    .consult-button:hover, .donate-button:hover {
-      transform: scale(1.05);
-    }
-
-    footer {
-      background: #2e7d32;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      margin-top: auto;
+    p {
+      font-size: 1.5rem;
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <div>
-        <img src="Earthway Alliance Logo.png" alt="Earthway Alliance Logo" style="height: 40px; margin-right: 10px;">
-        <a href="index.html" style="font-weight: bold; color: #FFD700; text-decoration: none;">EarthWay Alliance</a>
-      </div>
-      <div>
-        <a href="about us.html">About Us</a>
-        <a href="contact us.html">Contact Us</a>
-        <a href="careers.html">Careers</a>
-        <a href="Downloads.html">Downloads</a>
-        <a href="Our Team.html">Our Team</a>
-      </div>
-    </nav>
-  </header>
 
-  <main>
-    <section class="hero">
-      <video id="bg-video" autoplay muted loop playsinline>
-        <source src="Forest.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <div class="hero-content">
-        <h1>EarthWay Alliance - Climate Solutions</h1>
-        <a href="Consultation.html" class="consult-button">Request Consultation</a>
-        <a href="donate.html" class="donate-button">Donate Now</a>
-      </div>
-    </section>
-  </main>
+  <!-- Hero Section -->
+  <section class="hero">
+    <video autoplay muted loop playsinline>
+      <source src="Forest.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="content">
+      <h1>Welcome to EarthWay Alliance</h1>
+      <p>Climate Change and Carbon Credit Consultancy</p>
+    </div>
+  </section>
 
-  <footer>
-    &copy; 2025 EarthWay Alliance | All Rights Reserved
-  </footer>
-
+  <!-- JavaScript for Video Playback Fix -->
   <script>
-    // Ensure the video loads correctly
     document.addEventListener("DOMContentLoaded", function () {
-      let video = document.getElementById("bg-video");
-      video.onerror = function () {
-        console.error("Error loading the video. Please check the file path.");
-      };
+      const video = document.querySelector("video");
+      video.play().catch(error => console.error("Video playback error:", error));
     });
   </script>
+
 </body>
 </html>
