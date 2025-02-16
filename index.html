@@ -20,6 +20,12 @@
       line-height: 1.6;
       background-color: #e8f5e9;
       color: #2e2e2e;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    main {
+      flex: 1;
     }
     header {
       background-color: #2e7d32;
@@ -107,16 +113,13 @@
     .consult-button:hover, .donate-button:hover {
       transform: scale(1.05);
     }
-
-   
-  
-footer {
-  margin-top: auto;
-  text-align: center;
-  padding: 10px;
-  background-color: #333;
-  color: white;
-}
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #333;
+      color: white;
+      margin-top: auto;
+    }
   </style>
 </head>
 <body>
@@ -136,11 +139,11 @@ footer {
     </nav>
   </header>
 
-  <!-- Hero Section with Sliding Points -->
- <video autoplay muted loop>
-  <source src="Forest.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+  <main>
+    <video autoplay muted loop>
+      <source src="Forest.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
 
     <div id="slider">
       <div class="slide visible">Request consultation to understand carbon credit opportunities</div>
@@ -151,9 +154,7 @@ footer {
 
     <a href="Consultation.html" class="consult-button">Request Consultation</a>
     <a href="donate.html" class="donate-button">Donate Now</a>
-  </section>
-
-  
+  </main>
 
   <footer>
     &copy; 2025 EarthWay Alliance | All Rights Reserved
@@ -174,7 +175,6 @@ footer {
     }
 
     setInterval(nextSlide, 4000);
-
     showSlide(currentSlide);
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
