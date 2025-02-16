@@ -76,6 +76,8 @@
       left: 50%;
       min-width: 100%;
       min-height: 100%;
+      width: auto;
+      height: auto;
       transform: translate(-50%, -50%);
       z-index: -1;
       filter: brightness(0.5);
@@ -128,35 +130,6 @@
       transform: scale(1.05);
     }
 
-    .partners-section {
-      background-color: #f1f8e9;
-      padding: 50px 20px;
-      text-align: center;
-    }
-
-    .partners-section h2 {
-      color: #2e7d32;
-      font-size: 2.5rem;
-      margin-bottom: 30px;
-    }
-
-    .partners-logos {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      flex-wrap: wrap;
-    }
-
-    .partners-logos img {
-      width: 80px;
-      height: auto;
-      transition: transform 0.3s;
-    }
-
-    .partners-logos img:hover {
-      transform: scale(1.1);
-    }
-
     footer {
       background: #2e7d32;
       color: white;
@@ -185,8 +158,8 @@
 
   <main>
     <section class="hero">
-      <video autoplay muted loop>
-        <source src="videos/Forest.mp4" type="video/mp4">
+      <video id="bg-video" autoplay muted loop playsinline>
+        <source src="Forest.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
 
@@ -207,6 +180,15 @@
   </footer>
 
   <script>
+    // Ensure the video loads correctly
+    document.addEventListener("DOMContentLoaded", function () {
+      let video = document.getElementById("bg-video");
+      video.onerror = function () {
+        console.error("Error loading the video. Please check the file path.");
+      };
+    });
+
+    // Slideshow functionality
     let currentSlide = 0;
     const slides = document.querySelectorAll('.slide');
 
@@ -222,10 +204,6 @@
 
     setInterval(nextSlide, 4000);
     showSlide(currentSlide);
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script>
-    AOS.init();
   </script>
 </body>
 </html>
