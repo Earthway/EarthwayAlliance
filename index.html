@@ -6,7 +6,7 @@
   <meta name="description" content="Earthway Alliance - Climate Change and Carbon Credit Consultancy">
   <meta name="author" content="EarthWay Alliance">
   <meta name="keywords" content="Climate Change, Carbon Credits, Sustainability, Consultation, Environmental Solutions">
-  <title>EarthWay Alliance | Climate Solutions</title>
+  <title>EarthWay Alliance</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
   <link rel="icon" type="image/png" href="Earthway Alliance Logo.png">
@@ -126,12 +126,23 @@ footer {
   background-color: #333;
   color: white;
 }
-img {
+.logo-container {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.logo-container img {
   height: 40px;
   margin-right: 10px;
-  margin-left: 10px; /* Moves it slightly away from the absolute left */
-  display: inline-block;
-  vertical-align: middle;
+}
+
+.logo-container a {
+  font-weight: bold;
+  color: #FFD700;
+  text-decoration: none;
 }
 
   </style>
@@ -139,10 +150,10 @@ img {
 <body>
   <header>
     <nav>
-      <div>
-        <img src="Earthway Alliance Logo.png" alt="Earthway Alliance Logo" style="height: 40px; margin-right: 10px;">
-        <a href="index.html" style="font-weight: bold; color: #FFD700; text-decoration: none;">EarthWay Alliance</a>
-      </div>
+      <div class="logo-container">
+  <img src="Earthway Alliance Logo.png" alt="Earthway Alliance Logo">
+  <a href="index.html">EarthWay Alliance</a>
+</div>
       <div>
         <a href="about us.html">About Us</a>
         <a href="contact us.html">Contact Us</a>
