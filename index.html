@@ -75,10 +75,21 @@ video {
   z-index: -1;
   filter: brightness(0.5);
 }
-
+.slide {
+      position: absolute;
+      top: 20%;
+      left: 0;
+      width: 100%;
+      color: white;
+      font-size: 2.5rem;
+      font-weight: bold;
+      opacity: 0;
+      text-shadow: 2px 2px 5px #000;
+      transition: opacity 1.5s ease-in-out;
+    }
     .visible {
       opacity: 1;
-    }
+  
     .consult-button, .donate-button {
       padding: 15px 30px;
       border-radius: 25px;
