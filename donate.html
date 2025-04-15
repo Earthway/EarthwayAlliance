@@ -139,7 +139,7 @@
 
       try {
         // Update this URL with your backend's live URL after deployment
-        await fetch("https://earthcare-backend.up.railway.app/notify-donation", {
+        await fetch("http://localhost:3000/notify-donation", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(notificationData),
