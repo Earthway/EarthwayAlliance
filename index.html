@@ -104,13 +104,17 @@
       flex-direction: column;
     }
 
+    /* Background video styles */
     .video-container {
-      position: relative;
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
-      height: 100vh;
+      height: 100%;
+      overflow: hidden;
     }
 
-    video.hero-video {
+    .hero-video {
       position: absolute;
       top: 0;
       left: 0;
@@ -118,7 +122,7 @@
       height: 100%;
       object-fit: cover;
       z-index: -1;
-      filter: brightness(0.5);
+      filter: brightness(0.4); /* Adjust the fade effect */
     }
 
     #slider {
@@ -273,13 +277,13 @@
   </header>
 
   <main>
-    <!-- Video Section -->
-    <section class="video-container">
+    <!-- Background Video Section -->
+    <div class="video-container">
       <video class="hero-video" autoplay muted loop playsinline>
         <source src="Forest.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-    </section>
+    </div>
 
     <!-- Slider Section -->
     <div id="slider" data-aos="zoom-in">
@@ -348,3 +352,4 @@
   </script>
 </body>
 </html>
+
