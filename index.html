@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Earthway Alliance - Climate Change and Carbon Credit Consultancy" />
+  <meta name="description" content="EarthWay Alliance - Climate Change and Carbon Credit Consultancy" />
   <meta name="author" content="EarthWay Alliance" />
   <meta name="keywords" content="Climate Change, Carbon Credits, Sustainability, Consultation, Environmental Solutions" />
   <meta property="og:title" content="EarthWay Alliance" />
@@ -11,261 +11,192 @@
   <meta property="og:image" content="Earthway Alliance Logo.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <title>EarthWay Alliance</title>
-
-  <!-- Fonts & Libraries -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="icon" type="image/png" href="Earthway Alliance Logo.png" />
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     body {
-      font-family: 'Poppins', sans-serif;
-      background: #e8f5e9;
-      color: #2e2e2e;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      scroll-behavior: smooth;
+      font-family: Arial, sans-serif;
+      background: #f8f9fa;
+      color: #333;
+      line-height: 1.6;
     }
 
     header {
-      background-color: #2e7d32;
-      padding: 15px 0;
-      text-align: center;
+      background-color: #0072C6;
       color: white;
-      position: sticky;
-      top: 0;
-      z-index: 999;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      padding: 20px 0;
+      border-bottom: 4px solid #005a9e;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
     }
 
     nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0 1rem;
       flex-wrap: wrap;
     }
 
-    .logo-container {
-      display: flex;
-      align-items: center;
+    .logo img {
+      height: 50px;
     }
 
-    .logo-container img {
-      height: 40px;
-      margin-right: 10px;
-    }
-
-    .logo-container a {
+    .logo a {
+      color: white;
+      font-size: 1.4rem;
       font-weight: bold;
-      color: #FFD700;
       text-decoration: none;
-      font-size: 1.3rem;
+      margin-left: 10px;
+      vertical-align: middle;
     }
 
-    .nav-links {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    nav a {
+    .nav-links a {
+      margin-left: 20px;
       color: white;
       text-decoration: none;
-      font-weight: bold;
-      padding: 10px 15px;
-      transition: all 0.3s ease;
-      border-radius: 5px;
+      font-weight: 500;
+      font-size: 1rem;
     }
 
-    nav a:hover {
-      background: #ffa500;
-      transform: scale(1.1);
+    .nav-links a:hover {
+      text-decoration: underline;
     }
 
     main {
-      position: relative;
-      width: 100%;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-    }
-
-    .video-container {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      overflow: hidden;
-    }
-
-    .hero-video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      position: absolute;
-      top: 0; left: 0;
-      z-index: -1;
-      filter: brightness(0.4);
-    }
-
-    #slider {
+      padding: 60px 20px;
       text-align: center;
-      max-width: 700px;
-      margin: 0 auto;
-      padding: 2rem;
+    }
+
+    .hero {
+      background: url('Forest.mp4') no-repeat center center / cover;
+      padding: 100px 20px;
       color: white;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 15px;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 0 20px rgba(0,0,0,0.2);
-      z-index: 1;
+      background-color: #0072C6;
+      position: relative;
     }
 
-    .slide {
-      display: none;
-      font-size: 1.2em;
-    }
-
-    .slide.visible {
-      display: block;
-    }
-
-    .consult-button,
-    .donate-button {
-      padding: 15px 30px;
-      border-radius: 25px;
-      text-decoration: none;
-      display: inline-block;
-      font-weight: bold;
-      cursor: pointer;
+    .hero::after {
+      content: "";
       position: absolute;
-      bottom: 10%;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-content {
+      position: relative;
       z-index: 1;
-      animation: pulse 2s infinite;
+      max-width: 700px;
+      margin: auto;
     }
 
-    .consult-button {
-      background: #FFD700;
+    .hero h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+
+    .buttons a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 25px;
+      border-radius: 4px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .btn-consult {
+      background-color: #ffcc00;
       color: #003366;
-      left: 10%;
     }
 
-    .donate-button {
-      background: #ff5722;
+    .btn-donate {
+      background-color: #d9534f;
       color: white;
-      right: 10%;
     }
 
-    .consult-button:hover,
-    .donate-button:hover {
-      transform: scale(1.05);
+    .btn-consult:hover {
+      background-color: #e6b800;
+    }
+
+    .btn-donate:hover {
+      background-color: #c9302c;
     }
 
     footer {
-      text-align: center;
-      padding: 20px;
       background-color: #333;
       color: white;
-      margin-top: auto;
+      padding: 20px 0;
+      text-align: center;
+      font-size: 0.9rem;
     }
 
     footer i {
-      margin: 0 5px;
-      color: #FFD700;
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
+      margin: 0 8px;
+      color: #ffffff;
     }
 
     @media (max-width: 768px) {
-      .consult-button, .donate-button {
-        padding: 12px 20px;
-        font-size: 0.9rem;
-        bottom: 5%;
-      }
-
-      #slider {
-        padding: 1rem;
-        font-size: 0.95rem;
-      }
-    }
-
-    @media (max-width: 500px) {
-      nav {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-      }
-
       .nav-links {
-        flex-direction: column;
         width: 100%;
+        text-align: center;
+        margin-top: 15px;
       }
 
-      .consult-button, .donate-button {
-        position: static;
+      .nav-links a {
         display: block;
-        margin: 10px auto;
-      }
-
-      main {
-        padding-top: 3rem;
-        height: auto;
-        min-height: 100vh;
-      }
-
-      video.hero-video {
-        height: 100%;
+        margin: 10px 0;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <nav>
-      <div class="logo-container" data-aos="fade-right">
-        <img src="Earthway Alliance Logo.png" alt="Earthway Alliance Logo" />
-        <a href="index.html">EarthWay Alliance</a>
-      </div>
-      <div class="nav-links" data-aos="fade-left">
-        <a href="about us.html">About Us</a>
-        <a href="contact us.html">Contact Us</a>
-        <a href="careers.html">Careers</a>
-        <a href="Downloads.html">Downloads</a>
-        <a href="Our Team.html">Our Team</a>
-      </div>
-    </nav>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <img src="Earthway Alliance Logo.png" alt="Earthway Logo" />
+          <a href="index.html">EarthWay Alliance</a>
+        </div>
+        <div class="nav-links">
+          <a href="about us.html">About Us</a>
+          <a href="contact us.html">Contact</a>
+          <a href="careers.html">Careers</a>
+          <a href="Downloads.html">Downloads</a>
+          <a href="Our Team.html">Team</a>
+        </div>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <div class="video-container">
-      <video class="hero-video" autoplay muted loop playsinline>
-        <source src="Forest.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-    </div>
-
-    <div id="slider" data-aos="zoom-in">
-      <div class="slide visible">Request consultation to understand carbon credit opportunities</div>
-      <div class="slide">Discover sustainable climate solutions tailored for your business</div>
-      <div class="slide">Get expert advice on climate risk mitigation and adaptation</div>
-      <div class="slide">Navigate carbon markets with confidence</div>
-    </div>
-
-    <a href="Consultation.html" class="consult-button" data-aos="fade-up">Request Consultation</a>
-    <a href="donate.html" class="donate-button" data-aos="fade-up">Donate Now</a>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Empowering Climate Action & Carbon Credit Solutions</h1>
+        <p>Discover sustainable solutions tailored for your organization. Get expert guidance on carbon markets, climate risk, and environmental resilience.</p>
+        <div class="buttons">
+          <a href="Consultation.html" class="btn-consult">Request Consultation</a>
+          <a href="donate.html" class="btn-donate">Donate Now</a>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer data-aos="fade-up">
+  <footer>
     &copy; 2025 EarthWay Alliance | All Rights Reserved
     <div>
       <i class="fab fa-facebook-f"></i>
@@ -274,31 +205,9 @@
       <i class="fab fa-instagram"></i>
     </div>
   </footer>
-
-  <!-- JS -->
-  <script>
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.slide');
-
-    function showSlide(index) {
-      slides.forEach(slide => slide.classList.remove('visible'));
-      slides[index].classList.add('visible');
-    }
-
-    function nextSlide() {
-      currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
-    }
-
-    setInterval(nextSlide, 3000);
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script>
-    AOS.init({ duration: 1200, easing: 'ease-out-back' });
-  </script>
 </body>
 </html>
+
 
 
 
