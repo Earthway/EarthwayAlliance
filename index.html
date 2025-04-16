@@ -19,14 +19,11 @@
       box-sizing: border-box;
     }
 
-    html, body {
-      height: 100%;
+    body {
       font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
       background-color: #e8f5e9;
       color: #2e2e2e;
-    }
-
-    body {
       display: flex;
       flex-direction: column;
       min-height: 100vh;
@@ -34,17 +31,17 @@
 
     header {
       background-color: #2e7d32;
+      padding: 15px 0;
+      text-align: center;
       color: white;
-      padding: 10px;
-      position: relative;
     }
 
     nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 0 1rem;
       flex-wrap: wrap;
-      padding: 0 20px;
     }
 
     .logo-container {
@@ -61,36 +58,40 @@
       font-weight: bold;
       color: #FFD700;
       text-decoration: none;
-      font-size: 1.2em;
+      font-size: 1.2rem;
     }
 
     .nav-links {
       display: flex;
-      gap: 15px;
+      gap: 20px;
       flex-wrap: wrap;
     }
 
-    .nav-links a {
+    nav a {
       color: white;
       text-decoration: none;
       font-weight: bold;
-      padding: 8px 12px;
+      padding: 10px 15px;
       transition: background 0.3s, transform 0.2s;
     }
 
-    .nav-links a:hover {
+    nav a:hover {
       background: #ffa500;
       border-radius: 5px;
-      transform: scale(1.05);
+      transform: scale(1.1);
     }
 
     main {
-      flex: 1;
       position: relative;
+      width: 100%;
+      height: 100vh;
       overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    .hero-video {
+    video.hero-video {
       position: absolute;
       top: 0;
       left: 0;
@@ -102,17 +103,15 @@
     }
 
     #slider {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 90%;
-      max-width: 700px;
+      position: relative;
+      z-index: 1;
       text-align: center;
-      background: rgba(0, 0, 0, 0.5);
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 2rem;
       color: white;
-      padding: 20px;
-      border-radius: 8px;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 10px;
     }
 
     .slide {
@@ -124,15 +123,18 @@
       display: block;
     }
 
-    .consult-button, .donate-button {
-      padding: 12px 25px;
+    .consult-button,
+    .donate-button {
+      padding: 15px 30px;
       border-radius: 25px;
       text-decoration: none;
+      display: inline-block;
       font-weight: bold;
       cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
       position: absolute;
       bottom: 10%;
-      transition: background 0.3s, transform 0.2s;
+      z-index: 1;
     }
 
     .consult-button {
@@ -147,39 +149,61 @@
       right: 10%;
     }
 
-    .consult-button:hover, .donate-button:hover {
+    .consult-button:hover,
+    .donate-button:hover {
       transform: scale(1.05);
     }
 
     footer {
       text-align: center;
-      padding: 12px;
+      padding: 10px;
       background-color: #333;
       color: white;
     }
 
-    /* Responsive adjustments */
     @media (max-width: 768px) {
-      .nav-links {
-        justify-content: center;
+      .consult-button,
+      .donate-button {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+        bottom: 5%;
       }
 
       #slider {
-        font-size: 1em;
-        padding: 15px;
-      }
-
-      .consult-button, .donate-button {
-        position: static;
-        display: block;
-        margin: 15px auto;
-        text-align: center;
+        padding: 1rem;
+        font-size: 0.95rem;
       }
     }
 
-    @media (max-width: 480px) {
-      .logo-container a {
-        font-size: 1em;
+    @media (max-width: 500px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .consult-button,
+      .donate-button {
+        position: static;
+        display: block;
+        margin: 10px auto;
+      }
+
+      main {
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 3rem;
+        height: auto;
+        min-height: 100vh;
+      }
+
+      video.hero-video {
+        height: 100%;
       }
     }
   </style>
@@ -202,7 +226,7 @@
   </header>
 
   <main>
-    <video class="hero-video" autoplay muted loop>
+    <video class="hero-video" autoplay muted loop playsinline>
       <source src="Forest.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
