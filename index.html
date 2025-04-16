@@ -13,6 +13,7 @@
   <title>EarthWay Alliance</title>
   <link rel="icon" type="image/png" href="Earthway Alliance Logo.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
   <style>
     * {
       margin: 0;
@@ -30,8 +31,11 @@
     header {
       background-color: #0072C6;
       color: white;
-      padding: 20px 0;
+      padding: 15px 0;
       border-bottom: 4px solid #005a9e;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     .container {
@@ -49,6 +53,7 @@
 
     .logo img {
       height: 50px;
+      vertical-align: middle;
     }
 
     .logo a {
@@ -57,7 +62,11 @@
       font-weight: bold;
       text-decoration: none;
       margin-left: 10px;
-      vertical-align: middle;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
     }
 
     .nav-links a {
@@ -72,17 +81,31 @@
       text-decoration: underline;
     }
 
-    main {
-      padding: 60px 20px;
-      text-align: center;
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
     }
 
     .hero {
-      background: url('Forest.mp4') no-repeat center center / cover;
-      padding: 100px 20px;
-      color: white;
-      background-color: #0072C6;
       position: relative;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+    }
+
+    .hero video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
     }
 
     .hero::after {
@@ -90,22 +113,22 @@
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
       background: rgba(0, 0, 0, 0.5);
+      z-index: 0;
     }
 
     .hero-content {
-      position: relative;
       z-index: 1;
       max-width: 700px;
-      margin: auto;
+      padding: 20px;
     }
 
     .hero h1 {
-      font-size: 2rem;
+      font-size: 2.5rem;
       margin-bottom: 20px;
     }
 
     .hero p {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       margin-bottom: 30px;
     }
 
@@ -137,6 +160,63 @@
       background-color: #c9302c;
     }
 
+    section.impact {
+      background: #ffffff;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    section.impact h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    section.impact p {
+      max-width: 800px;
+      margin: 0 auto 30px;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .stat {
+      margin: 15px;
+      flex: 1 1 200px;
+    }
+
+    .stat h3 {
+      font-size: 2rem;
+      color: #0072C6;
+    }
+
+    .newsletter {
+      background: #f0f0f0;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .newsletter input[type="email"] {
+      padding: 10px;
+      width: 250px;
+      max-width: 80%;
+      margin-right: 10px;
+    }
+
+    .newsletter button {
+      padding: 10px 20px;
+      background: #0072C6;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .newsletter button:hover {
+      background: #005a9e;
+    }
+
     footer {
       background-color: #333;
       color: white;
@@ -152,14 +232,22 @@
 
     @media (max-width: 768px) {
       .nav-links {
+        flex-direction: column;
+        display: none;
         width: 100%;
-        text-align: center;
-        margin-top: 15px;
+      }
+
+      .nav-links.active {
+        display: flex;
       }
 
       .nav-links a {
-        display: block;
         margin: 10px 0;
+      }
+
+      .menu-toggle {
+        display: block;
+        color: white;
       }
     }
   </style>
@@ -169,10 +257,11 @@
     <div class="container">
       <nav>
         <div class="logo">
-          <img src="Earthway Alliance Logo.png" alt="Earthway Logo" />
+          <img src="Earthway Alliance Logo.png" alt="Earthway Logo" loading="lazy" />
           <a href="index.html">EarthWay Alliance</a>
         </div>
-        <div class="nav-links">
+        <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
+        <div class="nav-links" id="nav-links">
           <a href="about us.html">About Us</a>
           <a href="contact us.html">Contact</a>
           <a href="careers.html">Careers</a>
@@ -184,7 +273,11 @@
   </header>
 
   <main>
-    <section class="hero">
+    <section class="hero" aria-label="Hero Section">
+      <video autoplay muted loop>
+        <source src="Forest.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+      </video>
       <div class="hero-content">
         <h1>Empowering Climate Action & Carbon Credit Solutions</h1>
         <p>Discover sustainable solutions tailored for your organization. Get expert guidance on carbon markets, climate risk, and environmental resilience.</p>
@@ -194,19 +287,32 @@
         </div>
       </div>
     </section>
-  </main>
 
-  <footer>
-    &copy; 2025 EarthWay Alliance | All Rights Reserved
-    <div>
-      <i class="fab fa-facebook-f"></i>
-      <i class="fab fa-twitter"></i>
-      <i class="fab fa-linkedin-in"></i>
-      <i class="fab fa-instagram"></i>
-    </div>
-  </footer>
-</body>
-</html>
+    <section class="impact">
+      <h2>Our Global Impact</h2>
+      <p>We're building a more sustainable future through collaboration, innovation, and climate leadership.</p>
+      <div class="stats">
+        <div class="stat">
+          <h3>150+</h3>
+          <p>Projects Completed</p>
+        </div>
+        <div class="stat">
+          <h3>200K+</h3>
+          <p>Carbon Credits Traded</p>
+        </div>
+        <div class="stat">
+          <h3>50+</h3>
+          <p>Partner Organizations</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter" aria-label="Newsletter Signup">
+      <h2>Stay Updated</h2>
+      <p>Sign up for our newsletter to receive insights and updates on climate action and sustainability.</p>
+      <form>
+        <
+
 
 
 
