@@ -6,10 +6,17 @@
   <meta name="description" content="Earthway Alliance - Climate Change and Carbon Credit Consultancy" />
   <meta name="author" content="EarthWay Alliance" />
   <meta name="keywords" content="Climate Change, Carbon Credits, Sustainability, Consultation, Environmental Solutions" />
+  <meta property="og:title" content="EarthWay Alliance" />
+  <meta property="og:description" content="Climate Change and Carbon Credit Consultancy" />
+  <meta property="og:image" content="Earthway Alliance Logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
   <title>EarthWay Alliance</title>
 
+  <!-- Fonts & Libraries -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="icon" type="image/png" href="Earthway Alliance Logo.png" />
 
   <style>
@@ -22,11 +29,12 @@
     body {
       font-family: 'Poppins', sans-serif;
       line-height: 1.6;
-      background-color: #e8f5e9;
+      background: #e8f5e9;
       color: #2e2e2e;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
+      scroll-behavior: smooth;
     }
 
     header {
@@ -34,6 +42,10 @@
       padding: 15px 0;
       text-align: center;
       color: white;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
     }
 
     nav {
@@ -58,7 +70,7 @@
       font-weight: bold;
       color: #FFD700;
       text-decoration: none;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
     }
 
     .nav-links {
@@ -72,23 +84,24 @@
       text-decoration: none;
       font-weight: bold;
       padding: 10px 15px;
-      transition: background 0.3s, transform 0.2s;
+      transition: all 0.3s ease;
+      border-radius: 5px;
     }
 
     nav a:hover {
       background: #ffa500;
-      border-radius: 5px;
       transform: scale(1.1);
     }
 
     main {
       position: relative;
       width: 100%;
-      height: 100vh;
+      min-height: 100vh;
       overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-direction: column;
     }
 
     video.hero-video {
@@ -103,15 +116,16 @@
     }
 
     #slider {
-      position: relative;
-      z-index: 1;
       text-align: center;
       max-width: 700px;
       margin: 0 auto;
       padding: 2rem;
       color: white;
-      background: rgba(0, 0, 0, 0.4);
-      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      z-index: 1;
     }
 
     .slide {
@@ -131,10 +145,10 @@
       display: inline-block;
       font-weight: bold;
       cursor: pointer;
-      transition: background 0.3s, transform 0.2s;
       position: absolute;
       bottom: 10%;
       z-index: 1;
+      animation: pulse 2s infinite;
     }
 
     .consult-button {
@@ -156,9 +170,38 @@
 
     footer {
       text-align: center;
-      padding: 10px;
+      padding: 20px;
       background-color: #333;
       color: white;
+      margin-top: auto;
+    }
+
+    footer i {
+      margin: 0 5px;
+      color: #FFD700;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    /* Back to Top Button */
+    #topBtn {
+      position: fixed;
+      bottom: 40px;
+      right: 30px;
+      background: #2e7d32;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      font-size: 18px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      display: none;
+      z-index: 1000;
     }
 
     @media (max-width: 768px) {
@@ -195,8 +238,6 @@
       }
 
       main {
-        flex-direction: column;
-        justify-content: flex-start;
         padding-top: 3rem;
         height: auto;
         min-height: 100vh;
@@ -211,11 +252,11 @@
 <body>
   <header>
     <nav>
-      <div class="logo-container">
+      <div class="logo-container" data-aos="fade-right">
         <img src="Earthway Alliance Logo.png" alt="Earthway Alliance Logo" />
         <a href="index.html">EarthWay Alliance</a>
       </div>
-      <div class="nav-links">
+      <div class="nav-links" data-aos="fade-left">
         <a href="about us.html">About Us</a>
         <a href="contact us.html">Contact Us</a>
         <a href="careers.html">Careers</a>
@@ -231,21 +272,30 @@
       Your browser does not support the video tag.
     </video>
 
-    <div id="slider">
+    <div id="slider" data-aos="zoom-in">
       <div class="slide visible">Request consultation to understand carbon credit opportunities</div>
       <div class="slide">Discover sustainable climate solutions tailored for your business</div>
       <div class="slide">Get expert advice on climate risk mitigation and adaptation</div>
       <div class="slide">Navigate carbon markets with confidence</div>
     </div>
 
-    <a href="Consultation.html" class="consult-button">Request Consultation</a>
-    <a href="donate.html" class="donate-button">Donate Now</a>
+    <a href="Consultation.html" class="consult-button" data-aos="fade-up">Request Consultation</a>
+    <a href="donate.html" class="donate-button" data-aos="fade-up">Donate Now</a>
   </main>
 
-  <footer>
+  <footer data-aos="fade-up">
     &copy; 2025 EarthWay Alliance | All Rights Reserved
+    <div>
+      <i class="fab fa-facebook-f"></i>
+      <i class="fab fa-twitter"></i>
+      <i class="fab fa-linkedin-in"></i>
+      <i class="fab fa-instagram"></i>
+    </div>
   </footer>
 
+  <button id="topBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+
+  <!-- Scripts -->
   <script>
     let currentSlide = 0;
     const slides = document.querySelectorAll('.slide');
@@ -262,10 +312,20 @@
 
     setInterval(nextSlide, 4000);
     showSlide(currentSlide);
+
+    // Scroll to Top Button
+    const topBtn = document.getElementById("topBtn");
+    window.onscroll = () => {
+      topBtn.style.display = window.scrollY > 200 ? "block" : "none";
+    };
+    topBtn.onclick = () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
-    AOS.init();
+    AOS.init({ once: true });
   </script>
 </body>
 </html>
+
