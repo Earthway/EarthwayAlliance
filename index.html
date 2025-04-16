@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Earthway Alliance - Climate Change and Carbon Credit Consultancy">
-  <meta name="author" content="EarthWay Alliance">
-  <meta name="keywords" content="Climate Change, Carbon Credits, Sustainability, Consultation, Environmental Solutions">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Earthway Alliance - Climate Change and Carbon Credit Consultancy" />
+  <meta name="author" content="EarthWay Alliance" />
+  <meta name="keywords" content="Climate Change, Carbon Credits, Sustainability, Consultation, Environmental Solutions" />
   <title>EarthWay Alliance</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-  <link rel="icon" type="image/png" href="Earthway Alliance Logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+  <link rel="icon" type="image/png" href="Earthway Alliance Logo.png" />
 
   <style>
     * {
@@ -17,6 +17,7 @@
       padding: 0;
       box-sizing: border-box;
     }
+
     body {
       font-family: 'Poppins', sans-serif;
       line-height: 1.6;
@@ -26,64 +27,101 @@
       flex-direction: column;
       min-height: 100vh;
     }
+
     main {
       flex: 1;
     }
+
     header {
       background-color: #2e7d32;
-      padding: 15px 0;
+      padding: 15px;
       text-align: center;
       color: white;
     }
+
     nav {
       display: flex;
-      justify-content: center;
-      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: space-between;
       align-items: center;
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 10px;
     }
-    nav a {
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-container img {
+      height: 40px;
+    }
+
+    .logo-container a {
+      font-weight: bold;
+      color: #FFD700;
+      text-decoration: none;
+      font-size: 1.2em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .nav-links a {
       color: white;
       text-decoration: none;
       font-weight: bold;
       padding: 10px 15px;
       transition: background 0.3s, transform 0.2s;
     }
-    nav a:hover {
+
+    .nav-links a:hover {
       background: #ffa500;
       border-radius: 5px;
       transform: scale(1.1);
     }
+
     .hero {
       height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
       text-align: center;
+      color: white;
       background: linear-gradient(135deg, #2e7d32, #004d40);
       position: relative;
       overflow: hidden;
     }
-video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  transform: translate(-50%, -50%);
-  z-index: -1;
-  filter: brightness(0.5);
-}
- .consult-button, .donate-button {
-      padding: 15px 30px;
+
+    video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+      filter: brightness(0.5);
+    }
+
+    .consult-button, .donate-button {
+      padding: 12px 25px;
       border-radius: 25px;
       text-decoration: none;
       display: inline-block;
-      transition: background 0.3s, transform 0.2s;
       font-weight: bold;
+      transition: background 0.3s, transform 0.2s;
       cursor: pointer;
     }
+
     .consult-button {
       background: #FFD700;
       color: #003366;
@@ -91,6 +129,7 @@ video {
       bottom: 20%;
       left: 10%;
     }
+
     .donate-button {
       background: #ff5722;
       color: white;
@@ -98,68 +137,91 @@ video {
       bottom: 20%;
       right: 10%;
     }
+
     .consult-button:hover, .donate-button:hover {
       transform: scale(1.05);
     }
-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  padding: 10px;
-  background-color: #333;
-  color: white;
-}
-.logo-container {
-  display: flex;
-  align-items: center;
-  position: absolute;
-  top: 10px;
-  left: 10px;
-}
-
-.logo-container img {
-  height: 40px;
-  margin-right: 10px;
-}
-
-.logo-container a {
-  font-weight: bold;
-  color: #FFD700;
-  text-decoration: none;
-}
 
     #slider {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    max-width: 600px;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    
-  }
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+      max-width: 600px;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 10px;
+      border-radius: 10px;
+    }
 
-  .slide {
-    display: none;
-    font-size: 1.2em;
-  }
+    .slide {
+      display: none;
+      font-size: 1.2em;
+    }
 
-  .slide.visible {
-    display: block;
-  }
+    .slide.visible {
+      display: block;
+    }
+
+    footer {
+      width: 100%;
+      text-align: center;
+      padding: 10px;
+      background-color: #333;
+      color: white;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+      }
+
+      .hero {
+        padding: 0 10px;
+        height: 100vh;
+      }
+
+      .consult-button,
+      .donate-button {
+        position: static;
+        margin: 10px auto;
+        display: block;
+      }
+
+      #slider {
+        width: 90%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .slide {
+        font-size: 1em;
+      }
+
+      .logo-container a {
+        font-size: 1em;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
     <nav>
-   <div class="logo-container">
-  <img src="Earthway Alliance Logo.png" alt="Earthway Alliance Logo">
-  <a href="index.html">EarthWay Alliance</a>
-</div>
-      <divstyle="margin-left: auto; display: flex; gap: 20px;">
+      <div class="logo-container">
+        <img src="Earthway Alliance Logo.png" alt="Earthway Alliance Logo">
+        <a href="index.html">EarthWay Alliance</a>
+      </div>
+      <div class="nav-links">
         <a href="about us.html">About Us</a>
         <a href="contact us.html">Contact Us</a>
         <a href="careers.html">Careers</a>
@@ -170,20 +232,22 @@ footer {
   </header>
 
   <main>
-    <video autoplay muted loop>
-      <source src="Forest.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+    <div class="hero">
+      <video autoplay muted loop>
+        <source src="Forest.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
 
-    <div id="slider">
-      <div class="slide visible">Request consultation to understand carbon credit opportunities</div>
-      <div class="slide">Discover sustainable climate solutions tailored for your business</div>
-      <div class="slide">Get expert advice on climate risk mitigation and adaptation</div>
-      <div class="slide">Navigate carbon markets with confidence</div>
+      <div id="slider">
+        <div class="slide visible">Request consultation to understand carbon credit opportunities</div>
+        <div class="slide">Discover sustainable climate solutions tailored for your business</div>
+        <div class="slide">Get expert advice on climate risk mitigation and adaptation</div>
+        <div class="slide">Navigate carbon markets with confidence</div>
+      </div>
+
+      <a href="Consultation.html" class="consult-button">Request Consultation</a>
+      <a href="donate.html" class="donate-button">Donate Now</a>
     </div>
-
-    <a href="Consultation.html" class="consult-button">Request Consultation</a>
-    <a href="donate.html" class="donate-button">Donate Now</a>
   </main>
 
   <footer>
