@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Request Consultation</title>
+  <title>Request Consultation | Earthway Alliance</title>
   <link rel="icon" type="image/png" href="Earthway Alliance Logo.png" />
   <style>
     * {
@@ -45,6 +45,7 @@
       position: relative;
       top: 20vh;
       text-align: center;
+      padding: 0 20px;
     }
 
     form {
@@ -60,7 +61,7 @@
 
     label {
       display: block;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
       font-weight: bold;
     }
 
@@ -80,29 +81,11 @@
       border: none;
       border-radius: 5px;
       cursor: pointer;
+      font-weight: bold;
     }
 
     button:hover {
       background-color: #004d40;
-    }
-
-    .back-home {
-      position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      text-decoration: none;
-      z-index: 1;
-    }
-
-    .back-home img {
-      width: 40px;
-      height: 40px;
-      transition: transform 0.3s;
-    }
-
-    .back-home img:hover {
-      transform: scale(1.1);
     }
 
     .back-link {
@@ -126,9 +109,9 @@
   </header>
 
   <div class="content">
-    <p>Thank you for choosing Earthway Alliance. Fill in your details, and we'll get back to you with expert guidance on climate change and carbon credit solutions.</p>
+    <p>Thank you for choosing <strong>Earthway Alliance</strong>. Please fill in your details below, and our team will get back to you with expert guidance on climate change solutions and carbon credits.</p>
     
-    <form action="mailto:kiprutoamos97@gmail.com" method="POST" enctype="text/plain">
+    <form action="mailto:earthwayalliance@gmail.com" method="POST" enctype="text/plain">
       <label for="name">Full Name:</label>
       <input type="text" id="name" name="Full Name" placeholder="Enter your full name" required>
 
@@ -138,22 +121,22 @@
       <label for="topic">Consultation Topic:</label>
       <select id="topic" name="Consultation Topic" required>
         <option value="">Select a Topic</option>
-        <option value="Understanding Carbon Credits">🌱 Understanding Carbon Credits – What they are, how they work, and how your land or project can qualify.</option>
-        <option value="Climate-Smart Agriculture">🌍 Climate-Smart Agriculture – Practical training for resilient farming practices in a changing climate.</option>
-        <option value="Afforestation & Reforestation">🌳 Afforestation & Reforestation – Step-by-step support for establishing and managing tree-planting projects.</option>
-        <option value="Wetland Conservation">💧 Wetland Conservation & Restoration – Ecosystem-based solutions for climate resilience and biodiversity protection.</option>
-        <option value="Monitoring & Verification">📊 Monitoring & Verification – Tools and training on how to track carbon projects for certification and reporting.</option>
-        <option value="Carbon Markets Access">🧾 Accessing Carbon Markets – Insights on how to connect your project with voluntary and compliance markets.</option>
-        <option value="Community Engagement">🤝 Community Engagement Models – Proven strategies for involving local communities in restoration efforts.</option>
+        <option value="Understanding Carbon Credits">🌱 Understanding Carbon Credits</option>
+        <option value="Climate-Smart Agriculture">🌍 Climate-Smart Agriculture</option>
+        <option value="Afforestation & Reforestation">🌳 Afforestation & Reforestation</option>
+        <option value="Wetland Conservation">💧 Wetland Conservation & Restoration</option>
+        <option value="Monitoring & Verification">📊 Monitoring & Verification</option>
+        <option value="Carbon Markets Access">🧾 Accessing Carbon Markets</option>
+        <option value="Community Engagement">🤝 Community Engagement Models</option>
       </select>
 
       <label for="message">Additional Information or Questions:</label>
       <textarea id="message" name="Message" placeholder="Provide details about your consultation needs..." rows="6"></textarea>
 
-      <button type="submit">Request Consultation</button>
+      <button type="submit">Submit Request</button>
     </form>
 
-    <a href="index.html" class="back-link">Back to Home</a>
+    <a href="index.html" class="back-link">← Back to Home</a>
   </div>
 
   <video autoplay muted loop id="background-video">
@@ -167,4 +150,3 @@
   </script>
 </body>
 </html>
-
