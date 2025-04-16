@@ -186,22 +186,6 @@
       100% { transform: scale(1); }
     }
 
-    #topBtn {
-      position: fixed;
-      bottom: 40px;
-      right: 30px;
-      background: #2e7d32;
-      color: white;
-      padding: 10px 15px;
-      border-radius: 50%;
-      border: none;
-      cursor: pointer;
-      font-size: 18px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-      display: none;
-      z-index: 1000;
-    }
-
     @media (max-width: 768px) {
       .consult-button, .donate-button {
         padding: 12px 20px;
@@ -291,8 +275,6 @@
     </div>
   </footer>
 
-  <button id="topBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
-
   <!-- JS -->
   <script>
     let currentSlide = 0;
@@ -309,20 +291,6 @@
     }
 
     setInterval(nextSlide, 3000);
-
-    const topBtn = document.getElementById('topBtn');
-    window.onscroll = function () {
-      if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-        topBtn.style.display = 'block';
-      } else {
-        topBtn.style.display = 'none';
-      }
-    };
-
-    topBtn.onclick = function () {
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
-    };
   </script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
@@ -331,5 +299,6 @@
   </script>
 </body>
 </html>
+
 
 
