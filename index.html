@@ -187,6 +187,33 @@
       100% { transform: scale(1); }
     }
 
+    /* Collapsible Section */
+    .collapsible {
+      background-color: #2e7d32;
+      color: white;
+      cursor: pointer;
+      padding: 15px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 18px;
+      margin-top: 10px;
+      border-radius: 5px;
+    }
+
+    .active, .collapsible:hover {
+      background-color: #ffa500;
+    }
+
+    .content {
+      padding: 0 18px;
+      display: none;
+      overflow: hidden;
+      background-color: #f1f1f1;
+      border-radius: 5px;
+    }
+
     /* Back to Top Button */
     #topBtn {
       position: fixed;
@@ -281,6 +308,18 @@
 
     <a href="Consultation.html" class="consult-button" data-aos="fade-up">Request Consultation</a>
     <a href="donate.html" class="donate-button" data-aos="fade-up">Donate Now</a>
+
+    <!-- Collapsible Sections -->
+    <button class="collapsible">Why Choose Us?</button>
+    <div class="content">
+      <p>Earthway Alliance provides tailored solutions in climate change and carbon credits. Our expertise ensures that businesses and individuals can effectively mitigate environmental risks and contribute to a sustainable future.</p>
+    </div>
+
+    <button class="collapsible">Our Services</button>
+    <div class="content">
+      <p>We offer consultation on carbon credits, climate adaptation strategies, and sustainable business practices. Our team is dedicated to providing you with the most effective strategies for environmental solutions.</p>
+    </div>
+
   </main>
 
   <footer data-aos="fade-up">
@@ -321,6 +360,20 @@
     topBtn.onclick = () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     };
+
+    // Collapsible Section
+    const collapsibles = document.querySelectorAll('.collapsible');
+    collapsibles.forEach(button => {
+      button.addEventListener('click', () => {
+        button.classList.toggle('active');
+        const content = button.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
+    });
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
@@ -328,4 +381,3 @@
   </script>
 </body>
 </html>
-
