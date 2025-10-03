@@ -218,15 +218,168 @@
     }
 
     footer {
-      background-color: #333;
-      color: white;
-      padding: 20px 0;
-      text-align: center;
+      background-color: #1a1a1a;
+      color: #e0e0e0;
+      padding: 0;
       font-size: 0.9rem;
     }
 
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      padding: 60px 20px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-section h3 {
+      color: #0072C6;
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+    }
+
+    .footer-section p {
+      line-height: 1.8;
+      color: #b0b0b0;
+      margin-bottom: 15px;
+    }
+
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 12px;
+    }
+
+    .footer-section ul li a {
+      color: #b0b0b0;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      display: inline-block;
+    }
+
+    .footer-section ul li a:hover {
+      color: #0072C6;
+      padding-left: 5px;
+    }
+
+    .footer-social {
+      margin-top: 20px;
+    }
+
+    .footer-social a {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      background: #333;
+      color: #fff;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 40px;
+      margin-right: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .footer-social a:hover {
+      background: #0072C6;
+      transform: translateY(-3px);
+    }
+
+    .contact-info li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #b0b0b0;
+    }
+
+    .contact-info i {
+      color: #0072C6;
+      width: 20px;
+    }
+
+    .office-status {
+      margin-top: 25px;
+      padding: 15px;
+      background: #2a2a2a;
+      border-radius: 8px;
+      border-left: 4px solid #0072C6;
+    }
+
+    .office-status h4 {
+      color: #fff;
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    .office-status p {
+      margin-bottom: 8px;
+      font-size: 0.85rem;
+    }
+
+    .status-indicator {
+      margin-top: 15px;
+      text-align: center;
+    }
+
+    .status-badge {
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: bold;
+      font-size: 0.85rem;
+      transition: all 0.3s ease;
+    }
+
+    .status-badge.open {
+      background: #28a745;
+      color: white;
+    }
+
+    .status-badge.closed {
+      background: #dc3545;
+      color: white;
+    }
+
+    .footer-bottom {
+      background: #0d0d0d;
+      padding: 20px;
+      border-top: 1px solid #333;
+    }
+
+    .footer-bottom-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .footer-bottom p {
+      margin: 0;
+      color: #888;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #888;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: #0072C6;
+    }
+
     footer i {
-      margin: 0 8px;
+      margin: 0;
     }
 
     .partners {
@@ -553,12 +706,74 @@
   </main>
 
   <footer>
-    &copy; 2025 EarthWay Alliance | All Rights Reserved
-    <div>
-      <i class="fab fa-facebook-f"></i>
-      <i class="fab fa-twitter"></i>
-      <i class="fab fa-linkedin-in"></i>
-      <i class="fab fa-instagram"></i>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>About EarthWay Alliance</h3>
+        <p>Leading climate change and carbon credit consultancy dedicated to creating sustainable solutions for a better tomorrow. We partner with organizations across Kenya and beyond to achieve meaningful environmental impact.</p>
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="about us.html">About Us</a></li>
+          <li><a href="Our Team.html">Our Team</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="Downloads.html">Resources & Downloads</a></li>
+          <li><a href="Consultation.html">Book Consultation</a></li>
+          <li><a href="donate.html">Support Our Mission</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Our Services</h3>
+        <ul>
+          <li><a href="#">Carbon Credit Trading</a></li>
+          <li><a href="#">Climate Risk Assessment</a></li>
+          <li><a href="#">Reforestation Projects</a></li>
+          <li><a href="#">Community Engagement</a></li>
+          <li><a href="#">Sustainability Consulting</a></li>
+          <li><a href="#">Environmental Audits</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Contact Information</h3>
+        <ul class="contact-info">
+          <li><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</li>
+          <li><i class="fas fa-phone"></i> +254 XXX XXX XXX</li>
+          <li><i class="fas fa-envelope"></i> info@earthwayalliance.org</li>
+          <li><i class="fas fa-globe"></i> www.earthwayalliance.org</li>
+        </ul>
+        <div class="office-status">
+          <h4>Office Hours</h4>
+          <p><i class="fas fa-clock"></i> Monday - Friday: 6:00 AM - 5:00 PM</p>
+          <p><i class="fas fa-calendar-times"></i> Saturday & Sunday: Closed</p>
+          <div class="status-indicator">
+            <span id="office-status" class="status-badge">Checking...</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="footer-bottom-content">
+          <p>&copy; 2025 EarthWay Alliance | All Rights Reserved</p>
+          <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Cookie Policy</a>
+            <a href="#">Sitemap</a>
+          </div>
+        </div>
+      </div>
     </div>
   </footer>
 
