@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us</title>
+  <title>Contact Us - EarthCare Alliance Consultancy</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * {
@@ -13,135 +13,366 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: white;
       position: relative;
-      height: 100vh;
-      overflow: hidden;
+      min-height: 100vh;
+      overflow-x: hidden;
+      overflow-y: auto;
     }
 
     header {
-      position: absolute;
+      position: fixed;
       top: 0;
       width: 100%;
-      padding: 20px;
+      padding: 25px 50px;
       text-align: center;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 1;
+      background: linear-gradient(135deg, rgba(46, 125, 50, 0.95), rgba(27, 94, 32, 0.95));
+      z-index: 100;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    header p {
+      margin-top: 8px;
+      font-size: 1.1em;
+      opacity: 0.95;
+      font-weight: 300;
     }
 
     video {
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
       z-index: -1;
-      filter: brightness(50%);
+      filter: brightness(45%);
     }
 
     .content {
       position: relative;
-      top: 30vh;
+      margin-top: 140px;
       text-align: center;
+      padding: 40px 20px;
     }
 
-    .social-icons {
-      position: absolute;
-      bottom: 80px;
-      left: 50%;
-      transform: translateX(-50%);
+    .content h2 {
+      font-size: 2.2em;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+      font-weight: 600;
+    }
+
+    .content p {
+      font-size: 1.2em;
+      line-height: 1.8;
+      max-width: 800px;
+      margin: 0 auto 30px;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+      font-weight: 300;
+    }
+
+    .info-cards {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+      margin: 50px auto;
+      max-width: 1200px;
+      padding: 0 20px;
+    }
+
+    .info-card {
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(10px);
+      padding: 30px;
+      border-radius: 15px;
+      width: 280px;
       text-align: center;
+      border: 2px solid rgba(46, 125, 50, 0.5);
+      transition: all 0.4s ease;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
     }
 
-    .social-icons a {
-      color: white;
-      font-size: 30px;
-      margin: 0 15px;
+    .info-card:hover {
+      transform: translateY(-10px);
+      border-color: rgba(76, 175, 80, 0.9);
+      box-shadow: 0 12px 35px rgba(46, 125, 50, 0.6);
+    }
+
+    .info-card i {
+      font-size: 3em;
+      color: #4caf50;
+      margin-bottom: 20px;
+    }
+
+    .info-card h3 {
+      font-size: 1.4em;
+      margin-bottom: 15px;
+      color: #81c784;
+      font-weight: 600;
+    }
+
+    .info-card p {
+      font-size: 1em;
+      line-height: 1.6;
+      color: #e0e0e0;
+      text-shadow: none;
+    }
+
+    .info-card a {
+      color: #81c784;
       text-decoration: none;
-      transition: transform 0.3s;
+      transition: color 0.3s;
+      font-weight: 500;
     }
 
-    .social-icons a:hover {
-      transform: scale(1.2);
-    }
-
-    .back-home {
-      position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      text-decoration: none;
-      z-index: 1;
-    }
-
-    .back-home img {
-      width: 40px;
-      height: 40px;
-      transition: transform 0.3s;
-    }
-
-    .back-home img:hover {
-      transform: scale(1.1);
+    .info-card a:hover {
+      color: #4caf50;
+      text-decoration: underline;
     }
 
     .contact-form {
-      position: absolute;
-      bottom: 20%;
-      left: 50%;
-      transform: translateX(-50%);
+      position: relative;
+      margin: 60px auto;
       width: 90%;
-      max-width: 400px;
-      background: rgba(0, 0, 0, 0.7);
-      padding: 20px;
-      border-radius: 10px;
+      max-width: 550px;
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.85), rgba(27, 94, 32, 0.75));
+      backdrop-filter: blur(15px);
+      padding: 40px;
+      border-radius: 20px;
       text-align: center;
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6);
+      border: 2px solid rgba(46, 125, 50, 0.4);
+    }
+
+    .contact-form h2 {
+      font-size: 2em;
+      margin-bottom: 25px;
+      color: #81c784;
+      font-weight: 600;
     }
 
     .contact-form input,
     .contact-form textarea {
       width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border: none;
-      border-radius: 5px;
+      padding: 15px;
+      margin: 12px 0;
+      border: 2px solid rgba(76, 175, 80, 0.3);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.95);
+      font-size: 1em;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      transition: all 0.3s ease;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: #4caf50;
+      box-shadow: 0 0 15px rgba(76, 175, 80, 0.5);
+      background: white;
+    }
+
+    .contact-form textarea {
+      resize: vertical;
+      min-height: 120px;
     }
 
     .contact-form button {
-      padding: 10px 20px;
-      background: #28a745;
+      padding: 15px 40px;
+      background: linear-gradient(135deg, #4caf50, #2e7d32);
       color: white;
       border: none;
-      border-radius: 5px;
+      border-radius: 10px;
       cursor: pointer;
+      font-size: 1.1em;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 20px rgba(46, 125, 50, 0.4);
+      margin-top: 10px;
     }
 
     .contact-form button:hover {
-      background: #218838;
+      background: linear-gradient(135deg, #66bb6a, #388e3c);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(76, 175, 80, 0.6);
+    }
+
+    .social-icons {
+      position: relative;
+      margin: 50px auto;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .social-icons h3 {
+      font-size: 1.8em;
+      margin-bottom: 25px;
+      color: #81c784;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    }
+
+    .social-icons a {
+      display: inline-block;
+      color: white;
+      font-size: 2.5em;
+      margin: 0 20px;
+      text-decoration: none;
+      transition: all 0.4s ease;
+      background: rgba(46, 125, 50, 0.6);
+      width: 70px;
+      height: 70px;
+      line-height: 70px;
+      border-radius: 50%;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.2) rotate(360deg);
+      background: rgba(76, 175, 80, 0.9);
+      box-shadow: 0 8px 30px rgba(76, 175, 80, 0.7);
+    }
+
+    .back-home {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      text-decoration: none;
+      z-index: 100;
+      background: linear-gradient(135deg, #4caf50, #2e7d32);
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 5px 25px rgba(46, 125, 50, 0.6);
+      transition: all 0.3s ease;
+    }
+
+    .back-home:hover {
+      transform: scale(1.15);
+      box-shadow: 0 8px 35px rgba(76, 175, 80, 0.8);
+    }
+
+    .back-home img {
+      width: 30px;
+      height: 30px;
+      filter: brightness(0) invert(1);
+    }
+
+    footer {
+      position: relative;
+      background: linear-gradient(135deg, rgba(27, 94, 32, 0.95), rgba(46, 125, 50, 0.95));
+      padding: 30px;
+      text-align: center;
+      margin-top: 80px;
+      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    footer p {
+      font-size: 1em;
+      margin: 5px 0;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.8em;
+      }
+
+      .content h2 {
+        font-size: 1.6em;
+      }
+
+      .info-cards {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .contact-form {
+        padding: 25px;
+      }
+
+      .social-icons a {
+        font-size: 2em;
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+        margin: 0 12px;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Contact Us</h1>
+    <h1><i class="fas fa-leaf"></i> Contact Us</h1>
+    <p>Your Environmental Sustainability Partner</p>
   </header>
 
   <div class="content">
-    <p>Get in touch with EarthCare Alliance Consultancy.</p>
+    <h2>Let's Build a Sustainable Future Together</h2>
+    <p>At EarthCare Alliance Consultancy, we're committed to providing expert environmental consulting services. Whether you need guidance on sustainability strategies, environmental compliance, or eco-friendly solutions, our dedicated team is here to help you make a positive impact on our planet.</p>
+  </div>
+
+  <div class="info-cards">
+    <div class="info-card">
+      <i class="fas fa-map-marker-alt"></i>
+      <h3>Our Office</h3>
+      <p>Nairobi, Kenya<br>East Africa Regional Hub</p>
+    </div>
+
+    <div class="info-card">
+      <i class="fas fa-phone-alt"></i>
+      <h3>Call Us</h3>
+      <p>Available Mon-Fri<br>9:00 AM - 6:00 PM EAT<br><a href="tel:+254">+254 XXX XXX XXX</a></p>
+    </div>
+
+    <div class="info-card">
+      <i class="fas fa-envelope"></i>
+      <h3>Email Us</h3>
+      <p>We'll respond within 24 hours<br><a href="mailto:kiprutoamos1997@gmail.com">kiprutoamos1997@gmail.com</a></p>
+    </div>
+
+    <div class="info-card">
+      <i class="fas fa-clock"></i>
+      <h3>Business Hours</h3>
+      <p>Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 2:00 PM<br>Sunday: Closed</p>
+    </div>
+  </div>
+
+  <div class="contact-form">
+    <h2><i class="fas fa-paper-plane"></i> Send Us a Message</h2>
+    <form action="mailto:kiprutoamos1997@gmail.com" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Full Name *" required>
+      <input type="email" name="email" placeholder="Your Email Address *" required>
+      <input type="tel" name="phone" placeholder="Your Phone Number *" required>
+      <textarea name="message" rows="5" placeholder="Tell us about your project or inquiry... *" required></textarea>
+      <button type="submit"><i class="fas fa-send"></i> Send Message</button>
+    </form>
   </div>
 
   <div class="social-icons">
-    <a href="https://www.facebook.com" target="_blank" title="Facebook">
-      <i class="fab fa-facebook"></i>
+    <h3>Connect With Us</h3>
+    <a href="https://www.facebook.com" target="_blank" title="Follow us on Facebook">
+      <i class="fab fa-facebook-f"></i>
     </a>
-    <a href="https://www.linkedin.com/in/amos-kipruto-chepkwony" target="_blank" title="LinkedIn">
-      <i class="fab fa-linkedin"></i>
+    <a href="https://www.linkedin.com/in/amos-kipruto-chepkwony" target="_blank" title="Connect on LinkedIn">
+      <i class="fab fa-linkedin-in"></i>
     </a>
-    <a href="https://www.youtube.com" target="_blank" title="YouTube">
+    <a href="https://www.youtube.com" target="_blank" title="Subscribe to our Channel">
       <i class="fab fa-youtube"></i>
     </a>
-    <a href="https://www.twitter.com" target="_blank" title="Twitter">
+    <a href="https://www.twitter.com" target="_blank" title="Follow us on Twitter">
       <i class="fab fa-twitter"></i>
     </a>
   </div>
@@ -151,24 +382,37 @@
     Your browser does not support the video tag.
   </video>
 
-  <a href="index.html" class="back-home">
+  <a href="index.html" class="back-home" title="Return to Homepage">
     <img src="https://img.icons8.com/ios-filled/50/2e7d32/home.png" alt="Back to Home">
   </a>
 
-  <div class="contact-form">
-    <form action="mailto:kiprutoamos1997@gmail.com" method="post" enctype="text/plain">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <input type="tel" name="phone" placeholder="Your Phone Number" required>
-      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </div>
+  <footer>
+    <p><strong>EarthCare Alliance Consultancy</strong></p>
+    <p>Leading Environmental Sustainability Solutions in East Africa</p>
+    <p>&copy; 2025 EarthCare Alliance. All Rights Reserved.</p>
+  </footer>
 
   <script>
     // Set slow-motion playback speed
     const video = document.getElementById('background-video');
     video.playbackRate = 0.5;
+
+    // Smooth scroll animation for info cards
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    });
+
+    document.querySelectorAll('.info-card').forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(30px)';
+      card.style.transition = 'all 0.6s ease';
+      observer.observe(card);
+    });
   </script>
 </body>
 </html>
