@@ -22,7 +22,7 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: #f8f9fa;
       color: #333;
       line-height: 1.6;
@@ -154,7 +154,7 @@
       padding: 60px 20px;
     }
 
-    section.impact, section.newsletter, section.testimonials, section.faqs, section.blog, section.contact-form {
+    section.impact {
       text-align: center;
     }
 
@@ -172,31 +172,6 @@
     .stat h3 {
       font-size: 2rem;
       color: #0072C6;
-    }
-
-    .newsletter input[type="email"] {
-      padding: 10px;
-      width: 250px;
-      max-width: 80%;
-      margin-right: 10px;
-    }
-
-    .newsletter button {
-      padding: 10px 20px;
-      background: #0072C6;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-
-    .newsletter button:hover {
-      background: #005a9e;
-    }
-
-    .blog img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
     }
 
     .donate-cta {
@@ -437,73 +412,546 @@
       }
     }
 
+    /* Enhanced Services Section */
     .services {
-      background: #f8f9fa;
-      padding: 60px 20px;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      padding: 80px 20px;
+      position: relative;
+      overflow: hidden;
     }
 
-    .services h2 {
+    .services::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(0,114,198,0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .section-header {
       text-align: center;
+      margin-bottom: 60px;
+      position: relative;
+    }
+
+    .section-title {
+      font-size: 2.8rem;
       color: #0072C6;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
+      font-weight: 700;
+      position: relative;
+      display: inline-block;
     }
 
-    .services > p {
-      text-align: center;
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, #0072C6, #00a8ff);
+      border-radius: 2px;
+    }
+
+    .section-subtitle {
+      font-size: 1.2rem;
       color: #666;
-      margin-bottom: 40px;
+      max-width: 700px;
+      margin: 20px auto 0;
     }
 
-    .services .stat h4 {
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 35px;
+      margin-top: 50px;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .service-card {
+      background: white;
+      border-radius: 16px;
+      padding: 40px 30px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #0072C6, #00a8ff);
+      transform: scaleX(0);
+      transition: transform 0.4s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 50px rgba(0,114,198,0.15);
+    }
+
+    .service-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .service-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #0072C6 0%, #00a8ff 100%);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 25px;
+      font-size: 2.2rem;
+      color: white;
+      transition: all 0.4s ease;
+    }
+
+    .service-card:hover .service-icon {
+      transform: rotateY(360deg);
+    }
+
+    .service-title {
+      font-size: 1.4rem;
       color: #333;
-      margin: 10px 0;
+      margin-bottom: 15px;
+      font-weight: 600;
     }
 
+    .service-description {
+      color: #666;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    /* Enhanced Process Section */
     .process {
       background: white;
-      padding: 60px 20px;
+      padding: 80px 20px;
       text-align: center;
+      position: relative;
     }
 
-    .process h2 {
-      color: #0072C6;
-      margin-bottom: 50px;
+    .process-timeline {
+      position: relative;
+      max-width: 1000px;
+      margin: 60px auto 0;
+    }
+
+    .timeline-line {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #0072C6 0%, #00a8ff 100%);
+      transform: translateY(-50%);
+      z-index: 0;
     }
 
     .process-steps {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 30px;
-      margin-top: 30px;
+      position: relative;
+      z-index: 1;
     }
 
     .process-step {
-      padding: 20px;
       text-align: center;
+      position: relative;
     }
 
-    .step-number {
-      width: 60px;
-      height: 60px;
-      background: #0072C6;
-      color: white;
+    .step-circle {
+      width: 90px;
+      height: 90px;
+      background: linear-gradient(135deg, #0072C6 0%, #00a8ff 100%);
+      border: 5px solid white;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.5rem;
-      font-weight: bold;
-      margin: 0 auto 20px;
+      margin: 0 auto 25px;
+      box-shadow: 0 8px 25px rgba(0,114,198,0.3);
+      position: relative;
+      transition: all 0.4s ease;
     }
 
-    .process-step h4 {
+    .process-step:hover .step-circle {
+      transform: scale(1.15);
+      box-shadow: 0 12px 35px rgba(0,114,198,0.4);
+    }
+
+    .step-number {
+      font-size: 2rem;
+      font-weight: 700;
+      color: white;
+    }
+
+    .step-title {
+      font-size: 1.3rem;
       color: #333;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
+      font-weight: 600;
     }
 
-    .process-step p {
+    .step-description {
       color: #666;
-      font-size: 0.95rem;
+      font-size: 0.98rem;
+      line-height: 1.6;
+    }
+
+    /* Enhanced Newsletter Section */
+    .newsletter {
+      background: linear-gradient(135deg, #0072C6 0%, #005a9e 100%);
+      color: white;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .newsletter .section-title {
+      color: white;
+    }
+
+    .newsletter .section-title::after {
+      background: white;
+    }
+
+    .newsletter .section-subtitle {
+      color: rgba(255,255,255,0.9);
+    }
+
+    .newsletter-form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+
+    .newsletter input[type="email"] {
+      padding: 16px 25px;
+      border: none;
+      border-radius: 50px;
+      width: 100%;
+      max-width: 400px;
+      font-size: 1rem;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+
+    .newsletter input[type="email"]:focus {
+      outline: none;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+      transform: translateY(-2px);
+    }
+
+    .newsletter button {
+      padding: 16px 40px;
+      background: white;
+      color: #0072C6;
+      border: none;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+
+    .newsletter button:hover {
+      background: #ffcc00;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    }
+
+    /* Enhanced Testimonials Section */
+    .testimonials {
+      background: #f8f9fa;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 35px;
+      margin-top: 50px;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .testimonial-card {
+      background: white;
+      border-radius: 16px;
+      padding: 40px 35px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      position: relative;
+      transition: all 0.4s ease;
+    }
+
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: 20px;
+      left: 25px;
+      font-size: 5rem;
+      color: #e9ecef;
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 50px rgba(0,114,198,0.12);
+    }
+
+    .testimonial-text {
+      font-size: 1.1rem;
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 25px;
+      position: relative;
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding-top: 20px;
+      border-top: 2px solid #e9ecef;
+    }
+
+    .author-avatar {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #0072C6, #00a8ff);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .author-info strong {
+      display: block;
+      color: #333;
+      font-size: 1.05rem;
+      margin-bottom: 3px;
+    }
+
+    .author-role {
+      color: #0072C6;
+      font-size: 0.9rem;
+    }
+
+    /* Enhanced FAQ Section */
+    .faqs {
+      background: white;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .faq-container {
+      max-width: 900px;
+      margin: 50px auto 0;
+    }
+
+    .faq-item {
+      background: #f8f9fa;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      overflow: hidden;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+      text-align: left;
+    }
+
+    .faq-item:hover {
+      box-shadow: 0 5px 25px rgba(0,114,198,0.1);
+    }
+
+    .faq-item h4 {
+      padding: 25px 30px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #333;
+      background: linear-gradient(90deg, #0072C6 0%, transparent 100%);
+      background-size: 0% 100%;
+      background-repeat: no-repeat;
+      transition: all 0.3s ease;
+      border-left: 4px solid #0072C6;
+      margin: 0;
+    }
+
+    .faq-item:hover h4 {
+      background-size: 3% 100%;
+      padding-left: 35px;
+    }
+
+    .faq-item p {
+      padding: 0 30px 25px 30px;
+      color: #666;
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    .faq-item p a {
+      color: #0072C6;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .faq-item p a:hover {
+      color: #005a9e;
+      text-decoration: underline;
+    }
+
+    /* Enhanced Blog Section */
+    .blog {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 40px;
+      margin-top: 50px;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .blog-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      transition: all 0.4s ease;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 50px rgba(0,114,198,0.15);
+    }
+
+    .blog-image {
+      width: 100%;
+      height: 240px;
+      background: linear-gradient(135deg, #0072C6 0%, #00a8ff 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .blog-image i {
+      font-size: 4rem;
+      color: rgba(255,255,255,0.3);
+    }
+
+    .blog-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .blog-content {
+      padding: 35px 30px;
+    }
+
+    .blog-title {
+      font-size: 1.5rem;
+      color: #333;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .blog-description {
+      color: #666;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 25px;
+    }
+
+    .blog-btn {
+      display: inline-block;
+      padding: 12px 30px;
+      background: linear-gradient(135deg, #0072C6 0%, #00a8ff 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,114,198,0.2);
+    }
+
+    .blog-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0,114,198,0.3);
+    }
+
+    .blog-btn.coming-soon {
+      background: linear-gradient(135deg, #666 0%, #888 100%);
+      cursor: not-allowed;
+    }
+
+    /* Contact Form */
+    .contact-form {
+      background: white;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .contact-form form {
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    .contact-form button {
+      background: #0072C6;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background: #005a9e;
     }
 
     @media (max-width: 768px) {
@@ -532,6 +980,38 @@
 
       .footer-links {
         justify-content: center;
+      }
+
+      .section-title {
+        font-size: 2.2rem;
+      }
+
+      .section-subtitle {
+        font-size: 1.1rem;
+      }
+
+      .services-grid,
+      .testimonials-grid,
+      .blog-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .newsletter-form {
+        flex-direction: column;
+      }
+
+      .newsletter input[type="email"],
+      .newsletter button {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      .timeline-line {
+        display: none;
+      }
+
+      .process-steps {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -601,117 +1081,205 @@
     </section>
 
     <section class="services">
-      <h2>Our Services</h2>
-      <p>Comprehensive climate solutions tailored to your organization's needs</p>
-      <div class="stats">
-        <div class="stat">
-          <i class="fas fa-leaf" style="font-size: 3rem; color: #0072C6; margin-bottom: 15px;"></i>
-          <h4>Carbon Credit Trading</h4>
-          <p>Expert guidance on carbon market participation and credit monetization strategies.</p>
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Our Services</h2>
+          <p class="section-subtitle">Comprehensive climate solutions tailored to your organization's needs</p>
         </div>
-        <div class="stat">
-          <i class="fas fa-chart-line" style="font-size: 3rem; color: #0072C6; margin-bottom: 15px;"></i>
-          <h4>Climate Risk Assessment</h4>
-          <p>Comprehensive analysis of climate vulnerabilities and adaptation planning.</p>
-        </div>
-        <div class="stat">
-          <i class="fas fa-tree" style="font-size: 3rem; color: #0072C6; margin-bottom: 15px;"></i>
-          <h4>Reforestation Projects</h4>
-          <p>Design and implementation of sustainable tree planting and restoration initiatives.</p>
-        </div>
-        <div class="stat">
-          <i class="fas fa-handshake" style="font-size: 3rem; color: #0072C6; margin-bottom: 15px;"></i>
-          <h4>Community Engagement</h4>
-          <p>Building local capacity and partnerships for long-term environmental impact.</p>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-leaf"></i>
+            </div>
+            <h3 class="service-title">Carbon Credit Trading</h3>
+            <p class="service-description">Expert guidance on carbon market participation and credit monetization strategies.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3 class="service-title">Climate Risk Assessment</h3>
+            <p class="service-description">Comprehensive analysis of climate vulnerabilities and adaptation planning.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-tree"></i>
+            </div>
+            <h3 class="service-title">Reforestation Projects</h3>
+            <p class="service-description">Design and implementation of sustainable tree planting and restoration initiatives.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-handshake"></i>
+            </div>
+            <h3 class="service-title">Community Engagement</h3>
+            <p class="service-description">Building local capacity and partnerships for long-term environmental impact.</p>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="process">
-      <h2>How We Work</h2>
-      <div class="container" style="max-width: 900px;">
-        <div class="process-steps">
-          <div class="process-step">
-            <div class="step-number">1</div>
-            <h4>Initial Consultation</h4>
-            <p>We listen to your goals and assess your current environmental position.</p>
-          </div>
-          <div class="process-step">
-            <div class="step-number">2</div>
-            <h4>Strategy Development</h4>
-            <p>Our experts create a customized roadmap aligned with your objectives.</p>
-          </div>
-          <div class="process-step">
-            <div class="step-number">3</div>
-            <h4>Implementation</h4>
-            <p>We guide you through executing sustainable solutions with measurable results.</p>
-          </div>
-          <div class="process-step">
-            <div class="step-number">4</div>
-            <h4>Monitoring & Support</h4>
-            <p>Ongoing tracking, reporting, and optimization to ensure long-term success.</p>
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">How We Work</h2>
+        </div>
+        <div class="process-timeline">
+          <div class="timeline-line"></div>
+          <div class="process-steps">
+            <div class="process-step">
+              <div class="step-circle">
+                <span class="step-number">1</span>
+              </div>
+              <h4 class="step-title">Initial Consultation</h4>
+              <p class="step-description">We listen to your goals and assess your current environmental position.</p>
+            </div>
+            <div class="process-step">
+              <div class="step-circle">
+                <span class="step-number">2</span>
+              </div>
+              <h4 class="step-title">Strategy Development</h4>
+              <p class="step-description">Our experts create a customized roadmap aligned with your objectives.</p>
+            </div>
+            <div class="process-step">
+              <div class="step-circle">
+                <span class="step-number">3</span>
+              </div>
+              <h4 class="step-title">Implementation</h4>
+              <p class="step-description">We guide you through executing sustainable solutions with measurable results.</p>
+            </div>
+            <div class="process-step">
+              <div class="step-circle">
+                <span class="step-number">4</span>
+              </div>
+              <h4 class="step-title">Monitoring & Support</h4>
+              <p class="step-description">Ongoing tracking, reporting, and optimization to ensure long-term success.</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <section class="newsletter">
-      <h2>Stay Updated</h2>
-      <p>Sign up for our newsletter to receive insights and updates on climate action and sustainability.</p>
-      <form>
-        <input type="email" placeholder="Enter your email" required>
-        <button type="submit">Subscribe</button>
-      </form>
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Stay Updated</h2>
+          <p class="section-subtitle">Sign up for our newsletter to receive insights and updates on climate action and sustainability.</p>
+        </div>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Enter your email" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
     </section>
 
     <section class="testimonials">
-      <h2>Our committed prayers</h2>
-      <div class="stats">
-        <div class="stat"><p>"EarthWay Alliance to cut emissions by good amounts in under a year!"</p><strong> Any organization</strong></div>
-        <div class="stat"><p>"Reliable, insightful, and always committed to the environment."</p><strong>Any organization</strong></div>
-        <div class="stat"><p>"A true partner in our sustainability journey."</p><strong>Any organization</strong></div>
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Client Success Stories</h2>
+          <p class="section-subtitle">Hear from organizations we've partnered with on their sustainability journey</p>
+        </div>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <p class="testimonial-text">EarthWay Alliance helped us cut emissions by significant amounts in under a year!</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">A</div>
+              <div class="author-info">
+                <strong>Leading Organization</strong>
+                <div class="author-role">Environmental Partner</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <p class="testimonial-text">Reliable, insightful, and always committed to the environment.</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">B</div>
+              <div class="author-info">
+                <strong>Corporate Client</strong>
+                <div class="author-role">Sustainability Initiative</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <p class="testimonial-text">A true partner in our sustainability journey.</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">C</div>
+              <div class="author-info">
+                <strong>Regional Partner</strong>
+                <div class="author-role">Climate Action Program</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <section class="faqs">
-      <h2>Frequently Asked Questions</h2>
-      <div class="container" style="max-width:800px; margin:auto;">
-        <h4>What are carbon credits?</h4>
-        <p>Carbon credits are permits that allow the holder to emit a certain amount of CO₂, used as part of efforts to reduce global emissions.</p>
-        <h4>How can I consult with your team?</h4>
-        <p>You can request a consultation via the <a href="Consultation.html">Consultation page</a>.</p>
-        <h4>Is EarthWay Alliance a non-profit?</h4>
-        <p>Yes, we operate as a mission-driven environmental consultancy.</p>
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-subtitle">Get answers to common questions about our services and climate solutions</p>
+        </div>
+        <div class="faq-container">
+          <div class="faq-item">
+            <h4>What are carbon credits?</h4>
+            <p>Carbon credits are permits that allow the holder to emit a certain amount of CO₂, used as part of efforts to reduce global emissions.</p>
+          </div>
+          <div class="faq-item">
+            <h4>How can I consult with your team?</h4>
+            <p>You can request a consultation via the <a href="Consultation.html">Consultation page</a>.</p>
+          </div>
+          <div class="faq-item">
+            <h4>Is EarthWay Alliance a non-profit?</h4>
+            <p>Yes, we operate as a mission-driven environmental consultancy.</p>
+          </div>
+        </div>
       </div>
     </section>
 
-  <section class="blog">
-  <h2>Latest Articles</h2>
-  <div class="stats">
-    <div class="stat">
-      <img src="blog1.jpg" alt="Climate Policy">
-      <h4>Top Climate Policies in 2025</h4>
-      <p>Explore new global standards reshaping emissions.</p>
-      <a href="Top_Climate_Policies_2025.pdf" target="_blank" style="display:inline-block;margin-top:10px;padding:8px 16px;background-color:#0072C6;color:white;text-decoration:none;border-radius:4px;">Download PDF</a>
-    </div>
-    <div class="stat">
-      <img src="blog2.jpg" alt="Renewable Energy">
-      <h4>Transition to Renewable Energy</h4>
-      <p>Now is the best time to go green with your energy supply.</p>
-      <a href="#" style="display:inline-block;margin-top:10px;padding:8px 16px;background-color:#0072C6;color:white;text-decoration:none;border-radius:4px;">Coming Soon</a>
-    </div>
-  </div>
-</section>
-
+    <section class="blog">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Latest Articles</h2>
+          <p class="section-subtitle">Stay informed with our latest insights on climate action and sustainability</p>
+        </div>
+        <div class="blog-grid">
+          <div class="blog-card">
+            <div class="blog-image">
+              <i class="fas fa-balance-scale"></i>
+            </div>
+            <div class="blog-content">
+              <h3 class="blog-title">Top Climate Policies in 2025</h3>
+              <p class="blog-description">Explore new global standards reshaping emissions and environmental regulations.</p>
+              <a href="Top_Climate_Policies_2025.pdf" target="_blank" class="blog-btn">Download PDF</a>
+            </div>
+          </div>
+          <div class="blog-card">
+            <div class="blog-image">
+              <i class="fas fa-solar-panel"></i>
+            </div>
+            <div class="blog-content">
+              <h3 class="blog-title">Transition to Renewable Energy</h3>
+              <p class="blog-description">Now is the best time to go green with your energy supply and reduce carbon footprint.</p>
+              <a href="#" class="blog-btn coming-soon">Coming Soon</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section class="contact-form">
-      <h2>Contact Us</h2>
-      <form style="max-width:600px; margin:auto;">
-        <input type="text" placeholder="Your Name" required style="width:100%; padding:10px; margin:10px 0;">
-        <input type="email" placeholder="Your Email" required style="width:100%; padding:10px; margin:10px 0;">
-        <textarea placeholder="Your Message" required style="width:100%; padding:10px; margin:10px 0;" rows="5"></textarea>
-        <button type="submit" style="background:#0072C6; color:white; padding:10px 20px; border:none;">Send Message</button>
-      </form>
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Contact Us</h2>
+        </div>
+        <form>
+          <input type="text" placeholder="Your Name" required>
+          <input type="email" placeholder="Your Email" required>
+          <textarea placeholder="Your Message" required rows="5"></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
     </section>
 
     <section class="donate-cta">
@@ -839,19 +1407,17 @@
     // Office Hours Status Checker
     function updateOfficeStatus() {
       const now = new Date();
-      const day = now.getDay(); // 0 = Sunday, 6 = Saturday
+      const day = now.getDay();
       const hours = now.getHours();
       const minutes = now.getMinutes();
       const currentTime = hours + minutes / 60;
 
       const statusBadge = document.getElementById('office-status');
       
-      // Check if weekend
       if (day === 0 || day === 6) {
         statusBadge.textContent = '🔴 CLOSED - Weekend';
         statusBadge.className = 'status-badge closed';
       } 
-      // Check if within working hours (6:00 AM - 5:00 PM)
       else if (currentTime >= 6 && currentTime < 17) {
         statusBadge.textContent = '🟢 OPEN NOW';
         statusBadge.className = 'status-badge open';
@@ -862,7 +1428,6 @@
       }
     }
 
-    // Update status immediately and every minute
     updateOfficeStatus();
     setInterval(updateOfficeStatus, 60000);
   </script>
