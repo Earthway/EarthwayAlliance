@@ -29,13 +29,14 @@
     }
 
     header {
-      background-color: #0072C6;
-      color: white;
-      padding: 15px 0;
-      border-bottom: 4px solid #005a9e;
+      background-color: white;
+      color: #333;
+      padding: 10px 0;
+      border-bottom: 2px solid #e0e0e0;
       position: sticky;
       top: 0;
       z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
 
     .container {
@@ -57,7 +58,7 @@
     }
 
     .logo a {
-      color: white;
+      color: #0072C6;
       font-size: 1.4rem;
       font-weight: bold;
       text-decoration: none;
@@ -71,21 +72,23 @@
 
     .nav-links a {
       margin-left: 20px;
-      color: white;
+      color: #333;
       text-decoration: none;
       font-weight: 500;
       font-size: 1rem;
+      transition: color 0.3s ease;
     }
 
     .nav-links a:hover {
-      text-decoration: underline;
+      color: #0072C6;
+      text-decoration: none;
     }
 
     .menu-toggle {
       display: none;
       font-size: 1.8rem;
       cursor: pointer;
-      color: white;
+      color: #333;
     }
 
     .hero {
@@ -275,6 +278,75 @@
       }
     }
 
+    .services {
+      background: #f8f9fa;
+      padding: 60px 20px;
+    }
+
+    .services h2 {
+      text-align: center;
+      color: #0072C6;
+      margin-bottom: 10px;
+    }
+
+    .services > p {
+      text-align: center;
+      color: #666;
+      margin-bottom: 40px;
+    }
+
+    .services .stat h4 {
+      color: #333;
+      margin: 10px 0;
+    }
+
+    .process {
+      background: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .process h2 {
+      color: #0072C6;
+      margin-bottom: 50px;
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .process-step {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .step-number {
+      width: 60px;
+      height: 60px;
+      background: #0072C6;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin: 0 auto 20px;
+    }
+
+    .process-step h4 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .process-step p {
+      color: #666;
+      font-size: 0.95rem;
+    }
+
     @media (max-width: 768px) {
       .nav-links {
         flex-direction: column;
@@ -355,6 +427,61 @@
           <div class="partner-logo">Elgeyo Marakwet County</div>
           <div class="partner-logo">Baringo County</div>
           <div class="partner-logo">Nakuru County</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services">
+      <h2>Our Services</h2>
+      <p>Comprehensive climate solutions tailored to your organization's needs</p>
+      <div class="stats">
+        <div class="stat">
+          <i class="fas fa-leaf" style="font-size: 3rem; color: #0072C6; margin-bottom: 15px;"></i>
+          <h4>Carbon Credit Trading</h4>
+          <p>Expert guidance on carbon market participation and credit monetization strategies.</p>
+        </div>
+        <div class="stat">
+          <i class="fas fa-chart-line" style="font-size: 3rem; color: #0072C6; margin-bottom: 15px;"></i>
+          <h4>Climate Risk Assessment</h4>
+          <p>Comprehensive analysis of climate vulnerabilities and adaptation planning.</p>
+        </div>
+        <div class="stat">
+          <i class="fas fa-tree" style="font-size: 3rem; color: #0072C6; margin-bottom: 15px;"></i>
+          <h4>Reforestation Projects</h4>
+          <p>Design and implementation of sustainable tree planting and restoration initiatives.</p>
+        </div>
+        <div class="stat">
+          <i class="fas fa-handshake" style="font-size: 3rem; color: #0072C6; margin-bottom: 15px;"></i>
+          <h4>Community Engagement</h4>
+          <p>Building local capacity and partnerships for long-term environmental impact.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="process">
+      <h2>How We Work</h2>
+      <div class="container" style="max-width: 900px;">
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="step-number">1</div>
+            <h4>Initial Consultation</h4>
+            <p>We listen to your goals and assess your current environmental position.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-number">2</div>
+            <h4>Strategy Development</h4>
+            <p>Our experts create a customized roadmap aligned with your objectives.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-number">3</div>
+            <h4>Implementation</h4>
+            <p>We guide you through executing sustainable solutions with measurable results.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-number">4</div>
+            <h4>Monitoring & Support</h4>
+            <p>Ongoing tracking, reporting, and optimization to ensure long-term success.</p>
+          </div>
         </div>
       </div>
     </section>
