@@ -1,4 +1,35 @@
-<!DOCTYPE html>
+section.testimonials {
+      background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+      color: #333;
+    }
+
+    section.testimonials h2 {
+      color: #333;
+    }
+
+    section.testimonials .stat {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    section.testimonials .stat:hover {
+      transform: translateY(-5px);
+    }
+
+    section.faqs {
+      background: white;
+    }
+
+    section.blog {
+      background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    }
+
+    section.blog h2 {
+      color: #333;
+    }<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -23,7 +54,7 @@
 
     body {
       font-family: Arial, sans-serif;
-      background: #f8f9fa;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: #333;
       line-height: 1.6;
     }
@@ -152,10 +183,32 @@
 
     section {
       padding: 60px 20px;
+      background: white;
+      margin: 20px auto;
+      max-width: 1400px;
+      border-radius: 15px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
     }
 
     section.impact, section.newsletter, section.testimonials, section.faqs, section.blog, section.contact-form {
       text-align: center;
+    }
+
+    section.impact {
+      background: linear-gradient(135deg, #0072C6 0%, #00a8e8 100%);
+      color: white;
+    }
+
+    section.impact h2, section.impact p {
+      color: white;
+    }
+
+    section.impact .stat h3 {
+      color: #ffcc00;
+    }
+
+    section.impact .stat p {
+      color: rgba(255,255,255,0.9);
     }
 
     .stats {
@@ -174,6 +227,15 @@
       color: #0072C6;
     }
 
+    section.newsletter {
+      background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+      color: white;
+    }
+
+    section.newsletter h2, section.newsletter p {
+      color: white;
+    }
+
     .newsletter input[type="email"] {
       padding: 10px;
       width: 250px;
@@ -183,14 +245,18 @@
 
     .newsletter button {
       padding: 10px 20px;
-      background: #0072C6;
-      color: white;
+      background: white;
+      color: #11998e;
       border: none;
       cursor: pointer;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: transform 0.3s ease;
     }
 
     .newsletter button:hover {
-      background: #005a9e;
+      transform: scale(1.05);
+      background: #f0f0f0;
     }
 
     .blog img {
@@ -200,21 +266,32 @@
     }
 
     .donate-cta {
-      background: #d9534f;
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
       color: white;
       text-align: center;
       padding: 50px 20px;
+      margin: 20px auto;
+      max-width: 1400px;
+      border-radius: 15px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
     }
 
     .donate-cta a {
       background: white;
-      color: #d9534f;
+      color: #f5576c;
       padding: 12px 30px;
       margin-top: 20px;
       display: inline-block;
       font-weight: bold;
-      border-radius: 4px;
+      border-radius: 25px;
       text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .donate-cta a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
     }
 
     footer {
@@ -383,15 +460,24 @@
     }
 
     .partners {
-      background: #fff;
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
       padding: 60px 20px;
       overflow: hidden;
+      margin: 20px auto;
+      max-width: 1400px;
+      border-radius: 15px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
     }
 
     .partners h2 {
       text-align: center;
-      margin-bottom: 40px;
-      color: #0072C6;
+      margin-bottom: 10px;
+      color: white;
+    }
+
+    .partners > p {
+      color: rgba(255,255,255,0.95);
+      text-align: center;
     }
 
     .partner-slider {
@@ -412,14 +498,15 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #f8f9fa;
-      border: 2px solid #0072C6;
+      background: white;
+      border: 2px solid rgba(255,255,255,0.3);
       border-radius: 8px;
       font-weight: bold;
-      color: #0072C6;
+      color: #f5576c;
       font-size: 0.9rem;
       text-align: center;
       padding: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
 
     .partner-logo img {
@@ -438,35 +525,60 @@
     }
 
     .services {
-      background: #f8f9fa;
+      background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
       padding: 60px 20px;
+      margin: 20px auto;
+      max-width: 1400px;
+      border-radius: 15px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
     }
 
     .services h2 {
       text-align: center;
-      color: #0072C6;
+      color: white;
       margin-bottom: 10px;
     }
 
     .services > p {
       text-align: center;
-      color: #666;
+      color: rgba(255,255,255,0.95);
       margin-bottom: 40px;
     }
 
+    .services .stat {
+      background: white;
+      padding: 30px 20px;
+      border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .services .stat:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    }
+
     .services .stat h4 {
-      color: #333;
+      color: #fa709a;
       margin: 10px 0;
     }
 
+    .services .stat p {
+      color: #666;
+    }
+
     .process {
-      background: white;
+      background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
       padding: 60px 20px;
       text-align: center;
+      margin: 20px auto;
+      max-width: 1400px;
+      border-radius: 15px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
     }
 
     .process h2 {
-      color: #0072C6;
+      color: white;
       margin-bottom: 50px;
     }
 
@@ -480,12 +592,20 @@
     .process-step {
       padding: 20px;
       text-align: center;
+      background: white;
+      border-radius: 12px;
+      transition: transform 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .process-step:hover {
+      transform: translateY(-5px);
     }
 
     .step-number {
       width: 60px;
       height: 60px;
-      background: #0072C6;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
       border-radius: 50%;
       display: flex;
@@ -494,6 +614,7 @@
       font-size: 1.5rem;
       font-weight: bold;
       margin: 0 auto 20px;
+      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
     }
 
     .process-step h4 {
