@@ -226,6 +226,55 @@
       margin: 0 8px;
     }
 
+    .partners {
+      background: #fff;
+      padding: 60px 20px;
+      overflow: hidden;
+    }
+
+    .partners h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #0072C6;
+    }
+
+    .partner-slider {
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+    }
+
+    .partner-track {
+      display: flex;
+      animation: slide 30s linear infinite;
+    }
+
+    .partner-logo {
+      min-width: 200px;
+      height: 100px;
+      margin: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f8f9fa;
+      border: 2px solid #0072C6;
+      border-radius: 8px;
+      font-weight: bold;
+      color: #0072C6;
+      font-size: 0.9rem;
+      text-align: center;
+      padding: 10px;
+    }
+
+    @keyframes slide {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
     @media (max-width: 768px) {
       .nav-links {
         flex-direction: column;
@@ -284,9 +333,29 @@
       <h2>Our Global Impact</h2>
       <p>We're building a more sustainable future through collaboration, innovation, and climate leadership.</p>
       <div class="stats">
-        <div class="stat"><h3>In progress</h3><p>Projects Completed</p></div>
-        <div class="stat"><h3>In Progress</h3><p>Carbon Credits Traded</p></div>
-        <div class="stat"><h3>In Progress</h3><p>Partner Organizations</p></div>
+        <div class="stat"><h3 class="counter" data-target="1500000">0</h3><p>Trees Planted</p></div>
+        <div class="stat"><h3 class="counter" data-target="500">0</h3><p>Households Supported</p></div>
+        <div class="stat"><h3 class="counter" data-target="1000">0</h3><p>Hectares Restored</p></div>
+      </div>
+    </section>
+
+    <section class="partners">
+      <h2>Our Partners</h2>
+      <div class="partner-slider">
+        <div class="partner-track">
+          <div class="partner-logo">Elgeyo Marakwet County</div>
+          <div class="partner-logo">Baringo County</div>
+          <div class="partner-logo">Nakuru County</div>
+          <div class="partner-logo">Uasin Gishu County</div>
+          <div class="partner-logo">Nandi County</div>
+          <div class="partner-logo">Trans Nzoia County</div>
+          <div class="partner-logo">Kenya Forest Service</div>
+          <div class="partner-logo">KEFRI</div>
+          <div class="partner-logo">WRUAS</div>
+          <div class="partner-logo">Elgeyo Marakwet County</div>
+          <div class="partner-logo">Baringo County</div>
+          <div class="partner-logo">Nakuru County</div>
+        </div>
       </div>
     </section>
 
@@ -370,7 +439,44 @@
     document.getElementById('mobile-menu').addEventListener('click', () => {
       document.getElementById('nav-links').classList.toggle('active');
     });
+
+    // Counter Animation
+    const counters = document.querySelectorAll('.counter');
+    const speed = 200;
+
+    const animateCounter = (counter) => {
+      const target = +counter.getAttribute('data-target');
+      const increment = target / speed;
+      let current = 0;
+
+      const updateCounter = () => {
+        current += increment;
+        if (current < target) {
+          counter.textContent = Math.ceil(current).toLocaleString();
+          setTimeout(updateCounter, 10);
+        } else {
+          counter.textContent = target.toLocaleString() + (target >= 500 ? '+' : '');
+        }
+      };
+      updateCounter();
+    };
+
+    // Intersection Observer for counters
+    const observerOptions = {
+      threshold: 0.5
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const counter = entry.target;
+          animateCounter(counter);
+          observer.unobserve(counter);
+        }
+      });
+    }, observerOptions);
+
+    counters.forEach(counter => observer.observe(counter));
   </script>
 </body>
 </html>
-
