@@ -3,9 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Donate - EarthWay Alliance</title>
+  <meta name="description" content="EarthWay Alliance - Climate Change and Carbon Credit Consultancy" />
+  <meta name="author" content="EarthWay Alliance" />
+  <meta name="keywords" content="Climate Change, Carbon Credits, Sustainability, Consultation, Environmental Solutions" />
+  <meta property="og:title" content="EarthWay Alliance" />
+  <meta property="og:description" content="Climate Change and Carbon Credit Consultancy" />
+  <meta property="og:image" content="Earthway Alliance Logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <title>EarthWay Alliance</title>
   <link rel="icon" type="image/png" href="Earthway Alliance Logo.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
   <style>
     * {
       margin: 0;
@@ -73,318 +81,457 @@
 
     .nav-links a:hover {
       color: #0072C6;
+      text-decoration: none;
     }
 
-    .hero-banner {
-      background: linear-gradient(135deg, #0072C6 0%, #005a9e 100%);
-      color: white;
-      padding: 80px 20px;
-      text-align: center;
-    }
-
-    .hero-banner h1 {
-      font-size: 2.5rem;
-      margin-bottom: 15px;
-    }
-
-    .hero-banner p {
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .donate-section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .impact-stats {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 30px;
-      margin: 40px 0;
-    }
-
-    .stat-card {
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      text-align: center;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-    }
-
-    .stat-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .stat-card i {
-      font-size: 3rem;
-      color: #0072C6;
-      margin-bottom: 15px;
-    }
-
-    .stat-card h3 {
-      font-size: 2rem;
-      color: #d9534f;
-      margin-bottom: 10px;
-    }
-
-    .donation-options {
-      background: white;
-      padding: 40px;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      margin: 40px 0;
-    }
-
-    .donation-options h2 {
-      color: #0072C6;
-      margin-bottom: 30px;
-      text-align: center;
-    }
-
-    .amount-buttons {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 15px;
-      margin-bottom: 25px;
-    }
-
-    .amount-btn {
-      padding: 15px;
-      border: 2px solid #0072C6;
-      background: white;
-      color: #0072C6;
-      font-size: 1.1rem;
-      font-weight: bold;
-      border-radius: 8px;
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
       cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .amount-btn:hover, .amount-btn.active {
-      background: #0072C6;
-      color: white;
-      transform: scale(1.05);
-    }
-
-    .custom-amount {
-      margin: 25px 0;
-    }
-
-    .custom-amount input {
-      width: 100%;
-      padding: 15px;
-      font-size: 1.1rem;
-      border: 2px solid #e0e0e0;
-      border-radius: 8px;
-      transition: border-color 0.3s ease;
-    }
-
-    .custom-amount input:focus {
-      outline: none;
-      border-color: #0072C6;
-    }
-
-    .donation-frequency {
-      margin: 25px 0;
-      text-align: center;
-    }
-
-    .frequency-btn {
-      padding: 12px 30px;
-      margin: 0 10px;
-      border: 2px solid #0072C6;
-      background: white;
-      color: #0072C6;
-      font-weight: bold;
-      border-radius: 25px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .frequency-btn:hover, .frequency-btn.active {
-      background: #0072C6;
-      color: white;
-    }
-
-    .payment-methods {
-      margin: 40px 0;
-    }
-
-    .payment-methods h3 {
-      color: #333;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-    .payment-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .payment-option {
-      background: #f8f9fa;
-      padding: 25px;
-      border-radius: 10px;
-      border: 2px solid #e0e0e0;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .payment-option:hover, .payment-option.active {
-      border-color: #0072C6;
-      background: #e8f4fd;
-    }
-
-    .payment-option i {
-      font-size: 2.5rem;
-      color: #0072C6;
-      margin-bottom: 10px;
-    }
-
-    .payment-option h4 {
-      margin: 10px 0;
       color: #333;
     }
 
-    .donate-btn {
-      width: 100%;
-      padding: 18px;
-      background: #d9534f;
-      color: white;
-      font-size: 1.3rem;
-      font-weight: bold;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      margin-top: 30px;
-    }
-
-    .donate-btn:hover {
-      background: #c9302c;
-      transform: scale(1.02);
-    }
-
-    .donate-btn:disabled {
-      background: #ccc;
-      cursor: not-allowed;
-      transform: none;
-    }
-
-    .bank-details {
-      background: #fff3cd;
-      padding: 25px;
-      border-radius: 10px;
-      border-left: 5px solid #ffc107;
-      margin: 25px 0;
-      display: none;
-    }
-
-    .bank-details.active {
-      display: block;
-    }
-
-    .bank-details h4 {
-      color: #856404;
-      margin-bottom: 15px;
-    }
-
-    .bank-details p {
-      margin: 8px 0;
-      color: #856404;
-    }
-
-    .mpesa-details {
-      background: #d1ecf1;
-      padding: 25px;
-      border-radius: 10px;
-      border-left: 5px solid #17a2b8;
-      margin: 25px 0;
-      display: none;
-    }
-
-    .mpesa-details.active {
-      display: block;
-    }
-
-    .mpesa-details h4 {
-      color: #0c5460;
-      margin-bottom: 15px;
-    }
-
-    .mpesa-details p {
-      margin: 8px 0;
-      color: #0c5460;
-    }
-
-    .trust-badges {
+    .hero {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 30px;
-      margin: 30px 0;
+      text-align: center;
+      color: white;
+    }
+
+    .hero video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+
+    .hero-content {
+      z-index: 1;
+      max-width: 700px;
+      padding: 20px;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    .btn-consult {
+      background-color: #ffcc00;
+      color: #003366;
+      padding: 12px 25px;
+      border-radius: 4px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .btn-consult:hover {
+      background-color: #e6b800;
+    }
+
+    section {
+      padding: 60px 20px;
+    }
+
+    section.impact, section.newsletter, section.testimonials, section.faqs, section.blog, section.contact-form {
+      text-align: center;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: space-around;
       flex-wrap: wrap;
     }
 
-    .trust-badge {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: #666;
+    .stat {
+      margin: 15px;
+      flex: 1 1 200px;
     }
 
-    .trust-badge i {
-      color: #28a745;
-      font-size: 1.5rem;
+    .stat h3 {
+      font-size: 2rem;
+      color: #0072C6;
     }
 
-    .impact-message {
-      background: linear-gradient(135deg, #28a745 0%, #20853a 100%);
+    .newsletter input[type="email"] {
+      padding: 10px;
+      width: 250px;
+      max-width: 80%;
+      margin-right: 10px;
+    }
+
+    .newsletter button {
+      padding: 10px 20px;
+      background: #0072C6;
       color: white;
-      padding: 40px;
-      border-radius: 10px;
-      text-align: center;
-      margin: 40px 0;
+      border: none;
+      cursor: pointer;
     }
 
-    .impact-message h3 {
-      font-size: 1.8rem;
-      margin-bottom: 15px;
+    .newsletter button:hover {
+      background: #005a9e;
+    }
+
+    .blog img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .donate-cta {
+      background: #d9534f;
+      color: white;
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .donate-cta a {
+      background: white;
+      color: #d9534f;
+      padding: 12px 30px;
+      margin-top: 20px;
+      display: inline-block;
+      font-weight: bold;
+      border-radius: 4px;
+      text-decoration: none;
     }
 
     footer {
       background-color: #1a1a1a;
       color: #e0e0e0;
-      padding: 40px 20px;
-      text-align: center;
-      margin-top: 60px;
+      padding: 0;
+      font-size: 0.9rem;
     }
 
-    footer p {
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      padding: 60px 20px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-section h3 {
+      color: #0072C6;
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+    }
+
+    .footer-section p {
+      line-height: 1.8;
+      color: #b0b0b0;
+      margin-bottom: 15px;
+    }
+
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 12px;
+    }
+
+    .footer-section ul li a {
+      color: #b0b0b0;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      display: inline-block;
+    }
+
+    .footer-section ul li a:hover {
+      color: #0072C6;
+      padding-left: 5px;
+    }
+
+    .footer-social {
+      margin-top: 20px;
+    }
+
+    .footer-social a {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      background: #333;
+      color: #fff;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 40px;
+      margin-right: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .footer-social a:hover {
+      background: #0072C6;
+      transform: translateY(-3px);
+    }
+
+    .contact-info li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #b0b0b0;
+    }
+
+    .contact-info i {
+      color: #0072C6;
+      width: 20px;
+    }
+
+    .office-status {
+      margin-top: 25px;
+      padding: 15px;
+      background: #2a2a2a;
+      border-radius: 8px;
+      border-left: 4px solid #0072C6;
+    }
+
+    .office-status h4 {
+      color: #fff;
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    .office-status p {
+      margin-bottom: 8px;
+      font-size: 0.85rem;
+    }
+
+    .status-indicator {
+      margin-top: 15px;
+      text-align: center;
+    }
+
+    .status-badge {
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: bold;
+      font-size: 0.85rem;
+      transition: all 0.3s ease;
+    }
+
+    .status-badge.open {
+      background: #28a745;
+      color: white;
+    }
+
+    .status-badge.closed {
+      background: #dc3545;
+      color: white;
+    }
+
+    .footer-bottom {
+      background: #0d0d0d;
+      padding: 20px;
+      border-top: 1px solid #333;
+    }
+
+    .footer-bottom-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .footer-bottom p {
+      margin: 0;
+      color: #888;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #888;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: #0072C6;
+    }
+
+    footer i {
+      margin: 0;
+    }
+
+    .partners {
+      background: #fff;
+      padding: 60px 20px;
+      overflow: hidden;
+    }
+
+    .partners h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #0072C6;
+    }
+
+    .partner-slider {
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+    }
+
+    .partner-track {
+      display: flex;
+      animation: slide 30s linear infinite;
+    }
+
+    .partner-logo {
+      min-width: 200px;
+      height: 100px;
+      margin: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f8f9fa;
+      border: 2px solid #0072C6;
+      border-radius: 8px;
+      font-weight: bold;
+      color: #0072C6;
+      font-size: 0.9rem;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .partner-logo img {
+      max-width: 180px;
+      max-height: 80px;
+      object-fit: contain;
+    }
+
+    @keyframes slide {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .services {
+      background: #f8f9fa;
+      padding: 60px 20px;
+    }
+
+    .services h2 {
+      text-align: center;
+      color: #0072C6;
+      margin-bottom: 10px;
+    }
+
+    .services > p {
+      text-align: center;
+      color: #666;
+      margin-bottom: 40px;
+    }
+
+    .services .stat h4 {
+      color: #333;
       margin: 10px 0;
     }
 
-    footer a {
+    .process {
+      background: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .process h2 {
       color: #0072C6;
-      text-decoration: none;
+      margin-bottom: 50px;
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .process-step {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .step-number {
+      width: 60px;
+      height: 60px;
+      background: #0072C6;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin: 0 auto 20px;
+    }
+
+    .process-step h4 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .process-step p {
+      color: #666;
+      font-size: 0.95rem;
     }
 
     @media (max-width: 768px) {
-      .hero-banner h1 {
-        font-size: 2rem;
+      .nav-links {
+        flex-direction: column;
+        display: none;
+        width: 100%;
       }
 
-      .amount-buttons {
-        grid-template-columns: repeat(2, 1fr);
+      .nav-links.active {
+        display: flex;
       }
 
-      .frequency-btn {
-        margin: 5px;
+      .nav-links a {
+        margin: 10px 0;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .footer-bottom-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-links {
+        justify-content: center;
       }
     }
   </style>
@@ -394,215 +541,330 @@
     <div class="container">
       <nav>
         <div class="logo">
-          <img src="Earthway Alliance Logo.png" alt="Earthway Logo" />
+          <img src="Earthway Alliance Logo.png" alt="Earthway Logo" loading="lazy" />
           <a href="index.html">EarthWay Alliance</a>
         </div>
-        <div class="nav-links">
+        <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
+        <div class="nav-links" id="nav-links">
           <a href="about us.html">About Us</a>
           <a href="contact us.html">Contact</a>
           <a href="careers.html">Careers</a>
-          <a href="index.html">Home</a>
+          <a href="Downloads.html">Downloads</a>
+          <a href="Our Team.html">Team</a>
         </div>
       </nav>
     </div>
   </header>
 
-  <div class="hero-banner">
-    <h1>Support Climate Action Today</h1>
-    <p>Your donation helps us plant trees, restore ecosystems, and build sustainable communities across Kenya and beyond.</p>
+  <main>
+    <section class="hero">
+      <video autoplay muted loop>
+        <source src="Forest.mp4" type="video/mp4">
+        Your browser does not support video.
+      </video>
+      <div class="hero-content">
+        <h1>Empowering Climate Action & Carbon Credit Solutions</h1>
+        <p>Discover sustainable solutions tailored for your organization. Get expert guidance on carbon markets, climate risk, and environmental resilience.</p>
+        <a href="Consultation.html" class="btn-consult">Request Consultation</a>
+      </div>
+    </section>
+
+    <section class="impact">
+      <h2>Our Global Impact</h2>
+      <p>We're building a more sustainable future through collaboration, innovation, and climate leadership.</p>
+      <div class="stats">
+        <div class="stat"><h3 class="counter" data-target="1500000">0</h3><p>Trees Planted</p></div>
+        <div class="stat"><h3 class="counter" data-target="500">0</h3><p>Households Supported</p></div>
+        <div class="stat"><h3 class="counter" data-target="1000">0</h3><p>Hectares Restored</p></div>
+      </div>
+    </section>
+
+    <section class="partners">
+      <h2>Our Partners</h2>
+      <p style="color: #666; margin-bottom: 30px;">Collaborating with leading organizations for environmental impact</p>
+      <div class="partner-slider">
+        <div class="partner-track">
+          <div class="partner-logo"><img src="logos/elgeyo-marakwet.png" alt="Elgeyo Marakwet County" onerror="this.parentElement.innerHTML='Elgeyo Marakwet County'"></div>
+          <div class="partner-logo"><img src="logos/baringo.png" alt="Baringo County" onerror="this.parentElement.innerHTML='Baringo County'"></div>
+          <div class="partner-logo"><img src="logos/nakuru.png" alt="Nakuru County" onerror="this.parentElement.innerHTML='Nakuru County'"></div>
+          <div class="partner-logo"><img src="logos/uasin-gishu.png" alt="Uasin Gishu County" onerror="this.parentElement.innerHTML='Uasin Gishu County'"></div>
+          <div class="partner-logo"><img src="logos/nandi.png" alt="Nandi County" onerror="this.parentElement.innerHTML='Nandi County'"></div>
+          <div class="partner-logo"><img src="logos/trans-nzoia.png" alt="Trans Nzoia County" onerror="this.parentElement.innerHTML='Trans Nzoia County'"></div>
+          <div class="partner-logo"><img src="logos/kfs.png" alt="Kenya Forest Service" onerror="this.parentElement.innerHTML='Kenya Forest Service'"></div>
+          <div class="partner-logo"><img src="logos/kefri.png" alt="KEFRI" onerror="this.parentElement.innerHTML='KEFRI'"></div>
+          <div class="partner-logo"><img src="logos/wruas.png" alt="WRUAS" onerror="this.parentElement.innerHTML='WRUAS'"></div>
+          <div class="partner-logo"><img src="logos/elgeyo-marakwet.png" alt="Elgeyo Marakwet County" onerror="this.parentElement.innerHTML='Elgeyo Marakwet County'"></div>
+          <div class="partner-logo"><img src="logos/baringo.png" alt="Baringo County" onerror="this.parentElement.innerHTML='Baringo County'"></div>
+          <div class="partner-logo"><img src="logos/nakuru.png" alt="Nakuru County" onerror="this.parentElement.innerHTML='Nakuru County'"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services">
+      <h2>Our Services</h2>
+      <p>Comprehensive climate solutions tailored to your organization's needs</p>
+      <div class="stats">
+        <div class="stat">
+          <i class="fas fa-leaf" style="font-size: 3rem; color: #0072C6; margin-bottom: 15px;"></i>
+          <h4>Carbon Credit Trading</h4>
+          <p>Expert guidance on carbon market participation and credit monetization strategies.</p>
+        </div>
+        <div class="stat">
+          <i class="fas fa-chart-line" style="font-size: 3rem; color: #0072C6; margin-bottom: 15px;"></i>
+          <h4>Climate Risk Assessment</h4>
+          <p>Comprehensive analysis of climate vulnerabilities and adaptation planning.</p>
+        </div>
+        <div class="stat">
+          <i class="fas fa-tree" style="font-size: 3rem; color: #0072C6; margin-bottom: 15px;"></i>
+          <h4>Reforestation Projects</h4>
+          <p>Design and implementation of sustainable tree planting and restoration initiatives.</p>
+        </div>
+        <div class="stat">
+          <i class="fas fa-handshake" style="font-size: 3rem; color: #0072C6; margin-bottom: 15px;"></i>
+          <h4>Community Engagement</h4>
+          <p>Building local capacity and partnerships for long-term environmental impact.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="process">
+      <h2>How We Work</h2>
+      <div class="container" style="max-width: 900px;">
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="step-number">1</div>
+            <h4>Initial Consultation</h4>
+            <p>We listen to your goals and assess your current environmental position.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-number">2</div>
+            <h4>Strategy Development</h4>
+            <p>Our experts create a customized roadmap aligned with your objectives.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-number">3</div>
+            <h4>Implementation</h4>
+            <p>We guide you through executing sustainable solutions with measurable results.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-number">4</div>
+            <h4>Monitoring & Support</h4>
+            <p>Ongoing tracking, reporting, and optimization to ensure long-term success.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <h2>Stay Updated</h2>
+      <p>Sign up for our newsletter to receive insights and updates on climate action and sustainability.</p>
+      <form>
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </section>
+
+    <section class="testimonials">
+      <h2>Our committed prayers</h2>
+      <div class="stats">
+        <div class="stat"><p>"EarthWay Alliance to cut emissions by good amounts in under a year!"</p><strong> Any organization</strong></div>
+        <div class="stat"><p>"Reliable, insightful, and always committed to the environment."</p><strong>Any organization</strong></div>
+        <div class="stat"><p>"A true partner in our sustainability journey."</p><strong>Any organization</strong></div>
+      </div>
+    </section>
+
+    <section class="faqs">
+      <h2>Frequently Asked Questions</h2>
+      <div class="container" style="max-width:800px; margin:auto;">
+        <h4>What are carbon credits?</h4>
+        <p>Carbon credits are permits that allow the holder to emit a certain amount of CO₂, used as part of efforts to reduce global emissions.</p>
+        <h4>How can I consult with your team?</h4>
+        <p>You can request a consultation via the <a href="Consultation.html">Consultation page</a>.</p>
+        <h4>Is EarthWay Alliance a non-profit?</h4>
+        <p>Yes, we operate as a mission-driven environmental consultancy.</p>
+      </div>
+    </section>
+
+  <section class="blog">
+  <h2>Latest Articles</h2>
+  <div class="stats">
+    <div class="stat">
+      <img src="blog1.jpg" alt="Climate Policy">
+      <h4>Top Climate Policies in 2025</h4>
+      <p>Explore new global standards reshaping emissions.</p>
+      <a href="Top_Climate_Policies_2025.pdf" target="_blank" style="display:inline-block;margin-top:10px;padding:8px 16px;background-color:#0072C6;color:white;text-decoration:none;border-radius:4px;">Download PDF</a>
+    </div>
+    <div class="stat">
+      <img src="blog2.jpg" alt="Renewable Energy">
+      <h4>Transition to Renewable Energy</h4>
+      <p>Now is the best time to go green with your energy supply.</p>
+      <a href="#" style="display:inline-block;margin-top:10px;padding:8px 16px;background-color:#0072C6;color:white;text-decoration:none;border-radius:4px;">Coming Soon</a>
+    </div>
   </div>
+</section>
 
-  <div class="donate-section">
-    <div class="impact-stats">
-      <div class="stat-card">
-        <i class="fas fa-tree"></i>
-        <h3>50</h3>
-        <p>Trees planted with $25</p>
-      </div>
-      <div class="stat-card">
-        <i class="fas fa-users"></i>
-        <h3>5</h3>
-        <p>Families supported with $100</p>
-      </div>
-      <div class="stat-card">
-        <i class="fas fa-leaf"></i>
-        <h3>1</h3>
-        <p>Hectare restored with $500</p>
-      </div>
-    </div>
 
-    <div class="donation-options">
-      <h2>Choose Your Donation Amount</h2>
-      
-      <div class="donation-frequency">
-        <button class="frequency-btn active" data-frequency="once">One-Time</button>
-        <button class="frequency-btn" data-frequency="monthly">Monthly</button>
-      </div>
+    <section class="contact-form">
+      <h2>Contact Us</h2>
+      <form style="max-width:600px; margin:auto;">
+        <input type="text" placeholder="Your Name" required style="width:100%; padding:10px; margin:10px 0;">
+        <input type="email" placeholder="Your Email" required style="width:100%; padding:10px; margin:10px 0;">
+        <textarea placeholder="Your Message" required style="width:100%; padding:10px; margin:10px 0;" rows="5"></textarea>
+        <button type="submit" style="background:#0072C6; color:white; padding:10px 20px; border:none;">Send Message</button>
+      </form>
+    </section>
 
-      <div class="amount-buttons">
-        <button class="amount-btn" data-amount="25">$25</button>
-        <button class="amount-btn" data-amount="50">$50</button>
-        <button class="amount-btn" data-amount="100">$100</button>
-        <button class="amount-btn" data-amount="250">$250</button>
-        <button class="amount-btn" data-amount="500">$500</button>
-        <button class="amount-btn" data-amount="1000">$1,000</button>
-      </div>
-
-      <div class="custom-amount">
-        <input type="number" id="customAmount" placeholder="Or enter a custom amount (USD)" min="1">
-      </div>
-
-      <div class="payment-methods">
-        <h3>Select Payment Method</h3>
-        <div class="payment-grid">
-          <div class="payment-option" data-method="mpesa">
-            <i class="fas fa-mobile-alt"></i>
-            <h4>M-PESA</h4>
-            <p>Pay via mobile money</p>
-          </div>
-          <div class="payment-option" data-method="bank">
-            <i class="fas fa-university"></i>
-            <h4>Bank Transfer</h4>
-            <p>Direct bank deposit</p>
-          </div>
-          <div class="payment-option" data-method="card">
-            <i class="fas fa-credit-card"></i>
-            <h4>Credit/Debit Card</h4>
-            <p>Secure online payment</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="mpesa-details" id="mpesaDetails">
-        <h4><i class="fas fa-mobile-alt"></i> M-PESA Payment Instructions</h4>
-        <p><strong>Paybill Number:</strong> 247247</p>
-        <p><strong>Account Number:</strong> EARTHWAY2025</p>
-        <p><strong>Steps:</strong></p>
-        <ol style="margin-left: 20px; color: #0c5460;">
-          <li>Go to M-PESA on your phone</li>
-          <li>Select Lipa Na M-PESA</li>
-          <li>Select Paybill</li>
-          <li>Enter Business Number: 247247</li>
-          <li>Enter Account Number: EARTHWAY2025</li>
-          <li>Enter Amount</li>
-          <li>Enter your M-PESA PIN</li>
-        </ol>
-      </div>
-
-      <div class="bank-details" id="bankDetails">
-        <h4><i class="fas fa-university"></i> Bank Transfer Details</h4>
-        <p><strong>Bank Name:</strong> Equity Bank Kenya</p>
-        <p><strong>Account Name:</strong> EarthWay Alliance</p>
-        <p><strong>Account Number:</strong> 0123456789</p>
-        <p><strong>Branch:</strong> Nairobi Branch</p>
-        <p><strong>SWIFT Code:</strong> EQBLKENA</p>
-      </div>
-
-      <button class="donate-btn" id="donateBtn" disabled>Select Amount & Payment Method</button>
-
-      <div class="trust-badges">
-        <div class="trust-badge">
-          <i class="fas fa-lock"></i>
-          <span>Secure Payment</span>
-        </div>
-        <div class="trust-badge">
-          <i class="fas fa-shield-alt"></i>
-          <span>100% Safe</span>
-        </div>
-        <div class="trust-badge">
-          <i class="fas fa-certificate"></i>
-          <span>Tax Deductible</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="impact-message">
-      <h3>Your Impact Matters</h3>
-      <p>Every donation directly contributes to reforestation, community support, and climate action. Together, we're building a sustainable future for generations to come.</p>
-    </div>
-  </div>
+    <section class="donate-cta">
+      <h2>Support Climate Action</h2>
+      <p>Your donation helps us create a more sustainable planet.</p>
+      <a href="donate.html">Donate Now</a>
+    </section>
+  </main>
 
   <footer>
-    <p>&copy; 2025 EarthWay Alliance | All Rights Reserved</p>
-    <p><a href="index.html">Back to Home</a> | <a href="contact us.html">Contact Us</a></p>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>About EarthWay Alliance</h3>
+        <p>Leading climate change and carbon credit consultancy dedicated to creating sustainable solutions for a better tomorrow. We partner with organizations across Kenya and beyond to achieve meaningful environmental impact.</p>
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="about us.html">About Us</a></li>
+          <li><a href="Our Team.html">Our Team</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="Downloads.html">Resources & Downloads</a></li>
+          <li><a href="Consultation.html">Book Consultation</a></li>
+          <li><a href="donate.html">Support Our Mission</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Our Services</h3>
+        <ul>
+          <li><a href="#">Carbon Credit Trading</a></li>
+          <li><a href="#">Climate Risk Assessment</a></li>
+          <li><a href="#">Reforestation Projects</a></li>
+          <li><a href="#">Community Engagement</a></li>
+          <li><a href="#">Sustainability Consulting</a></li>
+          <li><a href="#">Environmental Audits</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Contact Information</h3>
+        <ul class="contact-info">
+          <li><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</li>
+          <li><i class="fas fa-phone"></i> +254 XXX XXX XXX</li>
+          <li><i class="fas fa-envelope"></i> info@earthwayalliance.org</li>
+          <li><i class="fas fa-globe"></i> www.earthwayalliance.org</li>
+        </ul>
+        <div class="office-status">
+          <h4>Office Hours</h4>
+          <p><i class="fas fa-clock"></i> Monday - Friday: 6:00 AM - 5:00 PM</p>
+          <p><i class="fas fa-calendar-times"></i> Saturday & Sunday: Closed</p>
+          <div class="status-indicator">
+            <span id="office-status" class="status-badge">Checking...</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="footer-bottom-content">
+          <p>&copy; 2025 EarthWay Alliance | All Rights Reserved</p>
+          <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Cookie Policy</a>
+            <a href="#">Sitemap</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </footer>
 
   <script>
-    let selectedAmount = 0;
-    let selectedFrequency = 'once';
-    let selectedPayment = null;
-
-    // Amount buttons
-    document.querySelectorAll('.amount-btn').forEach(btn => {
-      btn.addEventListener('click', function() {
-        document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('active'));
-        this.classList.add('active');
-        selectedAmount = parseFloat(this.getAttribute('data-amount'));
-        document.getElementById('customAmount').value = '';
-        updateDonateButton();
-      });
+    document.getElementById('mobile-menu').addEventListener('click', () => {
+      document.getElementById('nav-links').classList.toggle('active');
     });
 
-    // Custom amount
-    document.getElementById('customAmount').addEventListener('input', function() {
-      document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('active'));
-      selectedAmount = parseFloat(this.value) || 0;
-      updateDonateButton();
-    });
+    // Counter Animation
+    const counters = document.querySelectorAll('.counter');
+    const speed = 200;
 
-    // Frequency buttons
-    document.querySelectorAll('.frequency-btn').forEach(btn => {
-      btn.addEventListener('click', function() {
-        document.querySelectorAll('.frequency-btn').forEach(b => b.classList.remove('active'));
-        this.classList.add('active');
-        selectedFrequency = this.getAttribute('data-frequency');
-        updateDonateButton();
-      });
-    });
+    const animateCounter = (counter) => {
+      const target = +counter.getAttribute('data-target');
+      const increment = target / speed;
+      let current = 0;
 
-    // Payment method
-    document.querySelectorAll('.payment-option').forEach(option => {
-      option.addEventListener('click', function() {
-        document.querySelectorAll('.payment-option').forEach(o => o.classList.remove('active'));
-        this.classList.add('active');
-        selectedPayment = this.getAttribute('data-method');
-        
-        // Show/hide payment details
-        document.getElementById('mpesaDetails').classList.remove('active');
-        document.getElementById('bankDetails').classList.remove('active');
-        
-        if (selectedPayment === 'mpesa') {
-          document.getElementById('mpesaDetails').classList.add('active');
-        } else if (selectedPayment === 'bank') {
-          document.getElementById('bankDetails').classList.add('active');
+      const updateCounter = () => {
+        current += increment;
+        if (current < target) {
+          counter.textContent = Math.ceil(current).toLocaleString();
+          setTimeout(updateCounter, 10);
+        } else {
+          counter.textContent = target.toLocaleString() + (target >= 500 ? '+' : '');
         }
-        
-        updateDonateButton();
-      });
-    });
+      };
+      updateCounter();
+    };
 
-    function updateDonateButton() {
-      const btn = document.getElementById('donateBtn');
-      if (selectedAmount > 0 && selectedPayment) {
-        btn.disabled = false;
-        const frequency = selectedFrequency === 'monthly' ? ' Monthly' : '';
-        btn.textContent = `Donate $${selectedAmount.toFixed(2)}${frequency}`;
-      } else {
-        btn.disabled = true;
-        btn.textContent = 'Select Amount & Payment Method';
+    // Intersection Observer for counters
+    const observerOptions = {
+      threshold: 0.5
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const counter = entry.target;
+          animateCounter(counter);
+          observer.unobserve(counter);
+        }
+      });
+    }, observerOptions);
+
+    counters.forEach(counter => observer.observe(counter));
+
+    // Office Hours Status Checker
+    function updateOfficeStatus() {
+      const now = new Date();
+      const day = now.getDay(); // 0 = Sunday, 6 = Saturday
+      const hours = now.getHours();
+      const minutes = now.getMinutes();
+      const currentTime = hours + minutes / 60;
+
+      const statusBadge = document.getElementById('office-status');
+      
+      // Check if weekend
+      if (day === 0 || day === 6) {
+        statusBadge.textContent = '🔴 CLOSED - Weekend';
+        statusBadge.className = 'status-badge closed';
+      } 
+      // Check if within working hours (6:00 AM - 5:00 PM)
+      else if (currentTime >= 6 && currentTime < 17) {
+        statusBadge.textContent = '🟢 OPEN NOW';
+        statusBadge.className = 'status-badge open';
+      } 
+      else {
+        statusBadge.textContent = '🔴 CLOSED';
+        statusBadge.className = 'status-badge closed';
       }
     }
 
-    // Donate button action
-    document.getElementById('donateBtn').addEventListener('click', function() {
-      if (selectedPayment === 'card') {
-        alert('Card payment processing coming soon! Please use M-PESA or Bank Transfer for now.');
-      } else if (selectedPayment === 'mpesa') {
-        alert(`Thank you for choosing to donate $${selectedAmount.toFixed(2)}!\n\nPlease follow the M-PESA instructions above to complete your donation.\n\nAfter payment, you'll receive a confirmation SMS.`);
-      } else if (selectedPayment === 'bank') {
-        alert(`Thank you for choosing to donate $${selectedAmount.toFixed(2)}!\n\nPlease use the bank details above to complete your transfer.\n\nKindly email your payment confirmation to info@earthwayalliance.org`);
-      }
-    });
+    // Update status immediately and every minute
+    updateOfficeStatus();
+    setInterval(updateOfficeStatus, 60000);
   </script>
 </body>
 </html>
