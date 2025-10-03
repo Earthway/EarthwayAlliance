@@ -84,6 +84,101 @@
       text-decoration: none;
     }
 
+    .search-btn {
+      margin-left: 20px;
+      background: #0072C6;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .search-btn:hover {
+      background: #005a9e;
+      transform: translateY(-2px);
+    }
+
+    .search-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 2000;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .search-modal.active {
+      display: flex;
+    }
+
+    .search-content {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 600px;
+      position: relative;
+    }
+
+    .search-close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #666;
+    }
+
+    .search-close:hover {
+      color: #0072C6;
+    }
+
+    .search-input-group {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .search-input-group input {
+      flex: 1;
+      padding: 12px;
+      border: 2px solid #e0e0e0;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    .search-input-group input:focus {
+      outline: none;
+      border-color: #0072C6;
+    }
+
+    .search-submit {
+      background: #0072C6;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+
+    .search-submit:hover {
+      background: #005a9e;
+    }
+
     .menu-toggle {
       display: none;
       font-size: 1.8rem;
@@ -969,6 +1064,12 @@
         margin: 10px 0;
       }
 
+      .search-btn {
+        margin: 10px 0;
+        width: 100%;
+        justify-content: center;
+      }
+
       .menu-toggle {
         display: block;
       }
@@ -1031,10 +1132,29 @@
           <a href="careers.html">Careers</a>
           <a href="Downloads.html">Downloads</a>
           <a href="Our Team.html">Team</a>
+          <button class="search-btn" id="search-btn">
+            <i class="fas fa-search"></i>
+            <span>Search</span>
+          </button>
         </div>
       </nav>
     </div>
   </header>
+
+  <!-- Search Modal -->
+  <div class="search-modal" id="search-modal">
+    <div class="search-content">
+      <button class="search-close" id="search-close">&times;</button>
+      <h2 style="color: #0072C6; margin-bottom: 10px;">Search the Web</h2>
+      <p style="color: #666; margin-bottom: 20px;">Enter your search query below</p>
+      <form class="search-input-group" id="search-form">
+        <input type="text" id="search-input" placeholder="What would you like to search for?" required>
+        <button type="submit" class="search-submit">
+          <i class="fas fa-search"></i> Search
+        </button>
+      </form>
+    </div>
+  </div>
 
   <main>
     <section class="hero">
@@ -1430,6 +1550,38 @@
 
     updateOfficeStatus();
     setInterval(updateOfficeStatus, 60000);
+
+    // Search Modal Functionality
+    const searchBtn = document.getElementById('search-btn');
+    const searchModal = document.getElementById('search-modal');
+    const searchClose = document.getElementById('search-close');
+    const searchForm = document.getElementById('search-form');
+    const searchInput = document.getElementById('search-input');
+
+    searchBtn.addEventListener('click', () => {
+      searchModal.classList.add('active');
+      searchInput.focus();
+    });
+
+    searchClose.addEventListener('click', () => {
+      searchModal.classList.remove('active');
+    });
+
+    searchModal.addEventListener('click', (e) => {
+      if (e.target === searchModal) {
+        searchModal.classList.remove('active');
+      }
+    });
+
+    searchForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const query = searchInput.value.trim();
+      if (query) {
+        window.open(`https://www.google.com/search?q=${encodeURIComponent(query)}`, '_blank');
+        searchModal.classList.remove('active');
+        searchInput.value = '';
+      }
+    });
   </script>
 </body>
 </html>
