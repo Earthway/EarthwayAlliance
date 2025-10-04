@@ -85,101 +85,87 @@
       text-decoration: none;
     }
 
-    .search-btn {
-      margin-left: 20px;
-      background: #2E7D32;
-      color: white;
-      border: none;
-      padding: 8px 15px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 1rem;
-      transition: all 0.3s ease;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
+    /* Navbar Search Styles */
+.navbar-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+  padding: 0 20px;
+}
 
-    .search-btn:hover {
-      background: #1B5E20;
-      transform: translateY(-2px);
-    }
+.navbar-search .search-input-group {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 25px;
+  padding: 5px 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
 
-    .search-modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.7);
-      z-index: 2000;
-      justify-content: center;
-      align-items: center;
-    }
+.navbar-search .search-input-group:focus-within {
+  box-shadow: 0 4px 12px rgba(46, 125, 50, 0.2);
+}
 
-    .search-modal.active {
-      display: flex;
-    }
+.navbar-search input {
+  border: none;
+  outline: none;
+  padding: 8px 12px;
+  font-size: 14px;
+  width: 250px;
+  background: transparent;
+}
 
-    .search-content {
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      width: 90%;
-      max-width: 600px;
-      position: relative;
-    }
+.navbar-search .search-submit {
+  background: #2E7D32;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
 
-    .search-close {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-      color: #666;
-    }
+.navbar-search .search-submit:hover {
+  background: #1B5E20;
+}
 
-    .search-close:hover {
-      color: #2E7D32;
-    }
+.search-clear {
+  background: #f44336;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
 
-    .search-input-group {
-      display: flex;
-      gap: 10px;
-      margin-top: 20px;
-    }
+.search-clear:hover {
+  background: #d32f2f;
+}
 
-    .search-input-group input {
-      flex: 1;
-      padding: 12px;
-      border: 2px solid #e0e0e0;
-      border-radius: 4px;
-      font-size: 1rem;
-    }
+.search-results-info {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  background: #2E7D32;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 999;
+  font-size: 14px;
+}
 
-    .search-input-group input:focus {
-      outline: none;
-      border-color: #2E7D32;
-    }
-
-    .search-submit {
-      background: #2E7D32;
-      color: white;
-      border: none;
-      padding: 12px 30px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-weight: 600;
-      transition: background 0.3s ease;
-    }
-
-    .search-submit:hover {
-      background: #1B5E20;
-    }
-
+/* Highlight matched text */
+.search-highlight {
+  background-color: #FFEB3B;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-weight: bold;
+}
     .menu-toggle {
       display: none;
       font-size: 1.8rem;
@@ -1143,20 +1129,21 @@
     </div>
   </header>
 
-  <!-- Search Modal -->
-  <div class="search-modal" id="search-modal">
-    <div class="search-content">
-      <button class="search-close" id="search-close">&times;</button>
-      <h2 style="color: #2E7D32; margin-bottom: 10px;">Search the Web</h2>
-      <p style="color: #666; margin-bottom: 20px;">Enter your search query below</p>
-      <form class="search-input-group" id="search-form">
-        <input type="text" id="search-input" placeholder="What would you like to search for?" required>
-        <button type="submit" class="search-submit">
-          <i class="fas fa-search"></i> Search
-        </button>
-      </form>
-    </div>
+ <!-- Search Bar in Navbar (Sticky) -->
+<div class="navbar-search">
+  <div class="search-input-group">
+    <input type="text" id="search-input" placeholder="Search this page..." />
+    <button type="button" class="search-submit" id="search-btn">
+      <i class="fas fa-search"></i>
+    </button>
   </div>
+  <button class="search-clear" id="search-clear" style="display: none;">Clear</button>
+</div>
+
+<!-- Search Results Counter -->
+<div class="search-results-info" id="search-results-info" style="display: none;">
+  <span id="search-count">0 results found</span>
+</div>
 
   <main>
     <section class="hero">
@@ -1165,7 +1152,7 @@
         Your browser does not support video.
       </video>
       <div class="hero-content">
-        <h1>Empowering Climate Action & Carbon Credit Solutions</h1>
+        <h1>We are shaping a future where climate action leads to healthier environments and stronger livelihoods.</h1>
         <p>Discover sustainable solutions tailored for your organization. Get expert guidance on carbon markets, climate risk, and environmental resilience.</p>
         <a href="Consultation.html" class="btn-consult">Request Consultation</a>
       </div>
@@ -1550,37 +1537,86 @@
     updateOfficeStatus();
     setInterval(updateOfficeStatus, 60000);
 
-    // Search Modal Functionality
-    const searchBtn = document.getElementById('search-btn');
-    const searchModal = document.getElementById('search-modal');
-    const searchClose = document.getElementById('search-close');
-    const searchForm = document.getElementById('search-form');
-    const searchInput = document.getElementById('search-input');
+   // In-page Search Functionality
+const searchInput = document.getElementById('search-input');
+const searchBtn = document.getElementById('search-btn');
+const searchClear = document.getElementById('search-clear');
+const searchResultsInfo = document.getElementById('search-results-info');
+const searchCount = document.getElementById('search-count');
 
-    searchBtn.addEventListener('click', () => {
-      searchModal.classList.add('active');
-      searchInput.focus();
-    });
+let currentHighlights = [];
 
-    searchClose.addEventListener('click', () => {
-      searchModal.classList.remove('active');
-    });
+function searchInPage(query) {
+  // Clear previous highlights
+  clearHighlights();
+  
+  if (!query.trim()) {
+    searchResultsInfo.style.display = 'none';
+    searchClear.style.display = 'none';
+    return;
+  }
+  
+  // Get all text content areas (adjust selectors based on your page structure)
+  const contentAreas = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6, li, td, span, a');
+  let matchCount = 0;
+  
+  contentAreas.forEach(element => {
+    const text = element.textContent;
+    const regex = new RegExp(query, 'gi');
+    
+    if (regex.test(text)) {
+      const highlightedHTML = element.innerHTML.replace(
+        new RegExp(`(${query})`, 'gi'),
+        '<span class="search-highlight">$1</span>'
+      );
+      element.innerHTML = highlightedHTML;
+      matchCount++;
+      currentHighlights.push(element);
+    }
+  });
+  
+  // Show results
+  searchCount.textContent = `${matchCount} result${matchCount !== 1 ? 's' : ''} found`;
+  searchResultsInfo.style.display = 'block';
+  searchClear.style.display = 'block';
+  
+  // Scroll to first result
+  if (matchCount > 0) {
+    const firstHighlight = document.querySelector('.search-highlight');
+    if (firstHighlight) {
+      firstHighlight.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }
+}
 
-    searchModal.addEventListener('click', (e) => {
-      if (e.target === searchModal) {
-        searchModal.classList.remove('active');
-      }
-    });
+function clearHighlights() {
+  const highlights = document.querySelectorAll('.search-highlight');
+  highlights.forEach(highlight => {
+    const parent = highlight.parentNode;
+    parent.replaceChild(document.createTextNode(highlight.textContent), highlight);
+    parent.normalize();
+  });
+  currentHighlights = [];
+}
 
-    searchForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const query = searchInput.value.trim();
-      if (query) {
-        window.open(`https://www.google.com/search?q=${encodeURIComponent(query)}`, '_blank');
-        searchModal.classList.remove('active');
-        searchInput.value = '';
-      }
-    });
+// Event listeners
+searchBtn.addEventListener('click', () => {
+  searchInPage(searchInput.value);
+});
+
+searchInput.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') {
+    e.preventDefault();
+    searchInPage(searchInput.value);
+  }
+});
+
+searchClear.addEventListener('click', () => {
+  searchInput.value = '';
+  clearHighlights();
+  searchResultsInfo.style.display = 'none';
+  searchClear.style.display = 'none';
+});
   </script>
 </body>
 </html>
