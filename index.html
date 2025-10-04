@@ -4,15 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="EarthWay Alliance - Climate Change and Carbon Credit Consultancy" />
-  <meta name="author" content="EarthWay Alliance" />
-  <meta name="keywords" content="Climate Change, Carbon Credits, Sustainability, Consultation, Environmental Solutions" />
-  <meta property="og:title" content="EarthWay Alliance" />
-  <meta property="og:description" content="Climate Change and Carbon Credit Consultancy" />
-  <meta property="og:image" content="Earthway Alliance Logo.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="google-site-verification" content="N04bA3e8efDPVnH91mELBljnGttuO_xDQjIF9RBgoEg" />
   <title>EarthWay Alliance</title>
-  <link rel="icon" type="image/png" href="Earthway Alliance Logo.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <style>
@@ -59,7 +51,7 @@
     }
 
     .logo a {
-      color: #0072C6;
+      color: #2E7D32;
       font-size: 1.4rem;
       font-weight: bold;
       text-decoration: none;
@@ -81,13 +73,12 @@
     }
 
     .nav-links a:hover {
-      color: #0072C6;
-      text-decoration: none;
+      color: #2E7D32;
     }
 
     .search-btn {
       margin-left: 20px;
-      background: #0072C6;
+      background: #2E7D32;
       color: white;
       border: none;
       padding: 8px 15px;
@@ -101,83 +92,8 @@
     }
 
     .search-btn:hover {
-      background: #005a9e;
+      background: #1B5E20;
       transform: translateY(-2px);
-    }
-
-    .search-modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.7);
-      z-index: 2000;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .search-modal.active {
-      display: flex;
-    }
-
-    .search-content {
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      width: 90%;
-      max-width: 600px;
-      position: relative;
-    }
-
-    .search-close {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-      color: #666;
-    }
-
-    .search-close:hover {
-      color: #0072C6;
-    }
-
-    .search-input-group {
-      display: flex;
-      gap: 10px;
-      margin-top: 20px;
-    }
-
-    .search-input-group input {
-      flex: 1;
-      padding: 12px;
-      border: 2px solid #e0e0e0;
-      border-radius: 4px;
-      font-size: 1rem;
-    }
-
-    .search-input-group input:focus {
-      outline: none;
-      border-color: #0072C6;
-    }
-
-    .search-submit {
-      background: #0072C6;
-      color: white;
-      border: none;
-      padding: 12px 30px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-weight: 600;
-      transition: background 0.3s ease;
-    }
-
-    .search-submit:hover {
-      background: #005a9e;
     }
 
     .menu-toggle {
@@ -196,24 +112,7 @@
       align-items: center;
       text-align: center;
       color: white;
-    }
-
-    .hero video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 0;
+      background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 100%);
     }
 
     .hero-content {
@@ -233,17 +132,19 @@
     }
 
     .btn-consult {
-      background-color: #ffcc00;
-      color: #003366;
+      background-color: #4CAF50;
+      color: white;
       padding: 12px 25px;
       border-radius: 4px;
       font-weight: bold;
       text-decoration: none;
-      transition: background 0.3s ease;
+      transition: all 0.3s ease;
+      display: inline-block;
     }
 
     .btn-consult:hover {
-      background-color: #e6b800;
+      background-color: #45a049;
+      transform: translateY(-2px);
     }
 
     section {
@@ -252,12 +153,14 @@
 
     section.impact {
       text-align: center;
+      background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
     }
 
     .stats {
       display: flex;
       justify-content: space-around;
       flex-wrap: wrap;
+      margin-top: 30px;
     }
 
     .stat {
@@ -267,11 +170,11 @@
 
     .stat h3 {
       font-size: 2rem;
-      color: #0072C6;
+      color: #2E7D32;
     }
 
     .donate-cta {
-      background: #d9534f;
+      background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 100%);
       color: white;
       text-align: center;
       padding: 50px 20px;
@@ -279,13 +182,20 @@
 
     .donate-cta a {
       background: white;
-      color: #d9534f;
+      color: #2E7D32;
       padding: 12px 30px;
       margin-top: 20px;
       display: inline-block;
       font-weight: bold;
       border-radius: 4px;
       text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .donate-cta a:hover {
+      background: #81C784;
+      color: white;
+      transform: translateY(-2px);
     }
 
     footer {
@@ -305,7 +215,7 @@
     }
 
     .footer-section h3 {
-      color: #0072C6;
+      color: #4CAF50;
       margin-bottom: 20px;
       font-size: 1.1rem;
     }
@@ -329,16 +239,11 @@
       color: #b0b0b0;
       text-decoration: none;
       transition: color 0.3s ease;
-      display: inline-block;
     }
 
     .footer-section ul li a:hover {
-      color: #0072C6;
+      color: #4CAF50;
       padding-left: 5px;
-    }
-
-    .footer-social {
-      margin-top: 20px;
     }
 
     .footer-social a {
@@ -355,7 +260,7 @@
     }
 
     .footer-social a:hover {
-      background: #0072C6;
+      background: #4CAF50;
       transform: translateY(-3px);
     }
 
@@ -367,7 +272,7 @@
     }
 
     .contact-info i {
-      color: #0072C6;
+      color: #4CAF50;
       width: 20px;
     }
 
@@ -376,7 +281,7 @@
       padding: 15px;
       background: #2a2a2a;
       border-radius: 8px;
-      border-left: 4px solid #0072C6;
+      border-left: 4px solid #4CAF50;
     }
 
     .office-status h4 {
@@ -385,27 +290,16 @@
       font-size: 1rem;
     }
 
-    .office-status p {
-      margin-bottom: 8px;
-      font-size: 0.85rem;
-    }
-
-    .status-indicator {
-      margin-top: 15px;
-      text-align: center;
-    }
-
     .status-badge {
       display: inline-block;
       padding: 8px 16px;
       border-radius: 20px;
       font-weight: bold;
       font-size: 0.85rem;
-      transition: all 0.3s ease;
     }
 
     .status-badge.open {
-      background: #28a745;
+      background: #4CAF50;
       color: white;
     }
 
@@ -446,28 +340,22 @@
     }
 
     .footer-links a:hover {
-      color: #0072C6;
-    }
-
-    footer i {
-      margin: 0;
+      color: #4CAF50;
     }
 
     .partners {
       background: #fff;
       padding: 60px 20px;
-      overflow: hidden;
     }
 
     .partners h2 {
       text-align: center;
       margin-bottom: 40px;
-      color: #0072C6;
+      color: #2E7D32;
     }
 
     .partner-slider {
       overflow: hidden;
-      position: relative;
       width: 100%;
     }
 
@@ -483,74 +371,43 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #f8f9fa;
-      border: 2px solid #0072C6;
+      background: #e8f5e9;
+      border: 2px solid #4CAF50;
       border-radius: 8px;
       font-weight: bold;
-      color: #0072C6;
-      font-size: 0.9rem;
-      text-align: center;
+      color: #2E7D32;
       padding: 10px;
     }
 
-    .partner-logo img {
-      max-width: 180px;
-      max-height: 80px;
-      object-fit: contain;
-    }
-
     @keyframes slide {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(-50%);
-      }
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
 
-    /* Enhanced Services Section */
     .services {
-      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
       padding: 80px 20px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .services::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      right: -10%;
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(0,114,198,0.1) 0%, transparent 70%);
-      border-radius: 50%;
     }
 
     .section-header {
       text-align: center;
       margin-bottom: 60px;
-      position: relative;
     }
 
     .section-title {
       font-size: 2.8rem;
-      color: #0072C6;
+      color: #2E7D32;
       margin-bottom: 15px;
       font-weight: 700;
-      position: relative;
-      display: inline-block;
     }
 
     .section-title::after {
       content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
+      display: block;
       width: 80px;
       height: 4px;
-      background: linear-gradient(90deg, #0072C6, #00a8ff);
+      background: linear-gradient(90deg, #2E7D32, #4CAF50);
+      margin: 10px auto 0;
       border-radius: 2px;
     }
 
@@ -565,10 +422,8 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 35px;
-      margin-top: 50px;
       max-width: 1200px;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 0 auto;
     }
 
     .service-card {
@@ -576,7 +431,7 @@
       border-radius: 16px;
       padding: 40px 30px;
       text-align: center;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      box-shadow: 0 10px 30px rgba(46,125,50,0.15);
       transition: all 0.4s ease;
       position: relative;
       overflow: hidden;
@@ -589,14 +444,14 @@
       left: 0;
       width: 100%;
       height: 4px;
-      background: linear-gradient(90deg, #0072C6, #00a8ff);
+      background: linear-gradient(90deg, #2E7D32, #4CAF50);
       transform: scaleX(0);
       transition: transform 0.4s ease;
     }
 
     .service-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 20px 50px rgba(0,114,198,0.15);
+      box-shadow: 0 20px 50px rgba(46,125,50,0.25);
     }
 
     .service-card:hover::before {
@@ -606,7 +461,7 @@
     .service-icon {
       width: 80px;
       height: 80px;
-      background: linear-gradient(135deg, #0072C6 0%, #00a8ff 100%);
+      background: linear-gradient(135deg, #2E7D32 0%, #4CAF50 100%);
       border-radius: 20px;
       display: flex;
       align-items: center;
@@ -634,62 +489,36 @@
       line-height: 1.7;
     }
 
-    /* Enhanced Process Section */
     .process {
       background: white;
       padding: 80px 20px;
       text-align: center;
-      position: relative;
-    }
-
-    .process-timeline {
-      position: relative;
-      max-width: 1000px;
-      margin: 60px auto 0;
-    }
-
-    .timeline-line {
-      position: absolute;
-      top: 50%;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, #0072C6 0%, #00a8ff 100%);
-      transform: translateY(-50%);
-      z-index: 0;
     }
 
     .process-steps {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 30px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .process-step {
-      text-align: center;
-      position: relative;
+      max-width: 1000px;
+      margin: 60px auto 0;
     }
 
     .step-circle {
       width: 90px;
       height: 90px;
-      background: linear-gradient(135deg, #0072C6 0%, #00a8ff 100%);
+      background: linear-gradient(135deg, #2E7D32 0%, #4CAF50 100%);
       border: 5px solid white;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       margin: 0 auto 25px;
-      box-shadow: 0 8px 25px rgba(0,114,198,0.3);
-      position: relative;
+      box-shadow: 0 8px 25px rgba(46,125,50,0.3);
       transition: all 0.4s ease;
     }
 
     .process-step:hover .step-circle {
       transform: scale(1.15);
-      box-shadow: 0 12px 35px rgba(0,114,198,0.4);
     }
 
     .step-number {
@@ -711,9 +540,8 @@
       line-height: 1.6;
     }
 
-    /* Enhanced Newsletter Section */
     .newsletter {
-      background: linear-gradient(135deg, #0072C6 0%, #005a9e 100%);
+      background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 100%);
       color: white;
       text-align: center;
       padding: 80px 20px;
@@ -734,7 +562,6 @@
     .newsletter-form {
       display: flex;
       justify-content: center;
-      align-items: center;
       gap: 15px;
       margin-top: 40px;
       flex-wrap: wrap;
@@ -747,38 +574,28 @@
       width: 100%;
       max-width: 400px;
       font-size: 1rem;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-      transition: all 0.3s ease;
-    }
-
-    .newsletter input[type="email"]:focus {
-      outline: none;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
-      transform: translateY(-2px);
     }
 
     .newsletter button {
       padding: 16px 40px;
       background: white;
-      color: #0072C6;
+      color: #2E7D32;
       border: none;
       border-radius: 50px;
       font-size: 1rem;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.3s ease;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
     }
 
     .newsletter button:hover {
-      background: #ffcc00;
+      background: #81C784;
+      color: white;
       transform: translateY(-3px);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
     }
 
-    /* Enhanced Testimonials Section */
     .testimonials {
-      background: #f8f9fa;
+      background: #e8f5e9;
       padding: 80px 20px;
       text-align: center;
     }
@@ -787,35 +604,21 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 35px;
-      margin-top: 50px;
       max-width: 1200px;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 50px auto 0;
     }
 
     .testimonial-card {
       background: white;
       border-radius: 16px;
       padding: 40px 35px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      position: relative;
+      box-shadow: 0 10px 30px rgba(46,125,50,0.12);
       transition: all 0.4s ease;
-    }
-
-    .testimonial-card::before {
-      content: '"';
-      position: absolute;
-      top: 20px;
-      left: 25px;
-      font-size: 5rem;
-      color: #e9ecef;
-      font-family: Georgia, serif;
-      line-height: 1;
     }
 
     .testimonial-card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 20px 50px rgba(0,114,198,0.12);
+      box-shadow: 0 20px 50px rgba(46,125,50,0.2);
     }
 
     .testimonial-text {
@@ -823,7 +626,6 @@
       color: #555;
       line-height: 1.8;
       margin-bottom: 25px;
-      position: relative;
       font-style: italic;
     }
 
@@ -832,13 +634,13 @@
       align-items: center;
       gap: 15px;
       padding-top: 20px;
-      border-top: 2px solid #e9ecef;
+      border-top: 2px solid #e8f5e9;
     }
 
     .author-avatar {
       width: 50px;
       height: 50px;
-      background: linear-gradient(135deg, #0072C6, #00a8ff);
+      background: linear-gradient(135deg, #2E7D32, #4CAF50);
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -852,15 +654,13 @@
       display: block;
       color: #333;
       font-size: 1.05rem;
-      margin-bottom: 3px;
     }
 
     .author-role {
-      color: #0072C6;
+      color: #2E7D32;
       font-size: 0.9rem;
     }
 
-    /* Enhanced FAQ Section */
     .faqs {
       background: white;
       padding: 80px 20px;
@@ -873,17 +673,11 @@
     }
 
     .faq-item {
-      background: #f8f9fa;
+      background: #e8f5e9;
       border-radius: 12px;
       margin-bottom: 20px;
-      overflow: hidden;
-      box-shadow: 0 3px 15px rgba(0,0,0,0.05);
-      transition: all 0.3s ease;
+      box-shadow: 0 3px 15px rgba(46,125,50,0.1);
       text-align: left;
-    }
-
-    .faq-item:hover {
-      box-shadow: 0 5px 25px rgba(0,114,198,0.1);
     }
 
     .faq-item h4 {
@@ -891,17 +685,8 @@
       font-size: 1.2rem;
       font-weight: 600;
       color: #333;
-      background: linear-gradient(90deg, #0072C6 0%, transparent 100%);
-      background-size: 0% 100%;
-      background-repeat: no-repeat;
-      transition: all 0.3s ease;
-      border-left: 4px solid #0072C6;
+      border-left: 4px solid #2E7D32;
       margin: 0;
-    }
-
-    .faq-item:hover h4 {
-      background-size: 3% 100%;
-      padding-left: 35px;
     }
 
     .faq-item p {
@@ -912,20 +697,17 @@
     }
 
     .faq-item p a {
-      color: #0072C6;
+      color: #2E7D32;
       text-decoration: none;
       font-weight: 600;
-      transition: color 0.3s ease;
     }
 
     .faq-item p a:hover {
-      color: #005a9e;
       text-decoration: underline;
     }
 
-    /* Enhanced Blog Section */
     .blog {
-      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
       padding: 80px 20px;
       text-align: center;
     }
@@ -934,45 +716,35 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
       gap: 40px;
-      margin-top: 50px;
       max-width: 1200px;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 50px auto 0;
     }
 
     .blog-card {
       background: white;
       border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      box-shadow: 0 10px 30px rgba(46,125,50,0.15);
       transition: all 0.4s ease;
     }
 
     .blog-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 20px 50px rgba(0,114,198,0.15);
+      box-shadow: 0 20px 50px rgba(46,125,50,0.25);
     }
 
     .blog-image {
       width: 100%;
       height: 240px;
-      background: linear-gradient(135deg, #0072C6 0%, #00a8ff 100%);
+      background: linear-gradient(135deg, #2E7D32 0%, #4CAF50 100%);
       display: flex;
       align-items: center;
       justify-content: center;
-      position: relative;
-      overflow: hidden;
     }
 
     .blog-image i {
       font-size: 4rem;
       color: rgba(255,255,255,0.3);
-    }
-
-    .blog-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
     }
 
     .blog-content {
@@ -996,26 +768,19 @@
     .blog-btn {
       display: inline-block;
       padding: 12px 30px;
-      background: linear-gradient(135deg, #0072C6 0%, #00a8ff 100%);
+      background: linear-gradient(135deg, #2E7D32 0%, #4CAF50 100%);
       color: white;
       text-decoration: none;
       border-radius: 50px;
       font-weight: 600;
       transition: all 0.3s ease;
-      box-shadow: 0 5px 15px rgba(0,114,198,0.2);
     }
 
     .blog-btn:hover {
       transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(0,114,198,0.3);
+      box-shadow: 0 8px 25px rgba(46,125,50,0.3);
     }
 
-    .blog-btn.coming-soon {
-      background: linear-gradient(135deg, #666 0%, #888 100%);
-      cursor: not-allowed;
-    }
-
-    /* Contact Form */
     .contact-form {
       background: white;
       padding: 80px 20px;
@@ -1036,8 +801,14 @@
       border-radius: 4px;
     }
 
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: #2E7D32;
+    }
+
     .contact-form button {
-      background: #0072C6;
+      background: #2E7D32;
       color: white;
       padding: 10px 20px;
       border: none;
@@ -1047,7 +818,7 @@
     }
 
     .contact-form button:hover {
-      background: #005a9e;
+      background: #1B5E20;
     }
 
     @media (max-width: 768px) {
@@ -1061,58 +832,17 @@
         display: flex;
       }
 
-      .nav-links a {
-        margin: 10px 0;
-      }
-
-      .search-btn {
-        margin: 10px 0;
-        width: 100%;
-        justify-content: center;
-      }
-
       .menu-toggle {
         display: block;
-      }
-
-      .footer-bottom-content {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .footer-links {
-        justify-content: center;
       }
 
       .section-title {
         font-size: 2.2rem;
       }
 
-      .section-subtitle {
-        font-size: 1.1rem;
-      }
-
       .services-grid,
       .testimonials-grid,
       .blog-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .newsletter-form {
-        flex-direction: column;
-      }
-
-      .newsletter input[type="email"],
-      .newsletter button {
-        width: 100%;
-        max-width: 100%;
-      }
-
-      .timeline-line {
-        display: none;
-      }
-
-      .process-steps {
         grid-template-columns: 1fr;
       }
     }
@@ -1123,7 +853,6 @@
     <div class="container">
       <nav>
         <div class="logo">
-          <img src="Earthway Alliance Logo.png" alt="Earthway Logo" loading="lazy" />
           <a href="index.html">EarthWay Alliance</a>
         </div>
         <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
@@ -1132,8 +861,8 @@
           <a href="contact us.html">Contact</a>
           <a href="careers.html">Careers</a>
           <a href="Downloads.html">Downloads</a>
-          a href="Our Team.html">Team</a
-          <button class="search-btn" id="search-btn">
+          <a href="Our Team.html">Team</a>
+          <button class="search-btn">
             <i class="fas fa-search"></i>
             <span>Search</span>
           </button>
@@ -1142,27 +871,8 @@
     </div>
   </header>
 
-  <!-- Search Modal -->
-  <div class="search-modal" id="search-modal">
-    <div class="search-content">
-      <button class="search-close" id="search-close">&times;</button>
-      <h2 style="color: #0072C6; margin-bottom: 10px;">Search the Web</h2>
-      <p style="color: #666; margin-bottom: 20px;">Enter your search query below</p>
-      <form class="search-input-group" id="search-form">
-        <input type="text" id="search-input" placeholder="What would you like to search for?" required>
-        <button type="submit" class="search-submit">
-          <i class="fas fa-search"></i> Search
-        </button>
-      </form>
-    </div>
-  </div>
-
   <main>
     <section class="hero">
-      <video autoplay muted loop>
-        <source src="Forest.mp4" type="video/mp4">
-        Your browser does not support video.
-      </video>
       <div class="hero-content">
         <h1>Empowering Climate Action & Carbon Credit Solutions</h1>
         <p>Discover sustainable solutions tailored for your organization. Get expert guidance on carbon markets, climate risk, and environmental resilience.</p>
@@ -1172,7 +882,8 @@
 
     <section class="impact">
       <h2>Our Global Impact</h2>
-      <p>We're building a more sustainable future through collaboration, innovation, and climate leadership.</p>
+      <p>We are building a more sustainable future by fostering cross-sector collaboration, 
+      driving innovation in climate solutions, and demonstrating leadership in environmental stewardship, resilience, and low-carbon development.</p>
       <div class="stats">
         <div class="stat"><h3 class="counter" data-target="1500000">0</h3><p>Trees Planted</p></div>
         <div class="stat"><h3 class="counter" data-target="500">0</h3><p>Households Supported</p></div>
@@ -1181,19 +892,18 @@
     </section>
 
     <section class="partners">
-      <h2>Our Partners</h2>
-      <p style="color: #666; margin-bottom: 30px;">Collaborating with leading organizations for environmental impact</p>
+      <h2>County Governments in Partnership</h2>
+      <p style="color: #666; margin-bottom: 30px;">We work with Kenyan County Governments to integrate climate science into policy and practice.</p>
       <div class="partner-slider">
         <div class="partner-track">
-           <div class="partner-logo"><img src="Elgeyo Marakwet County.png" alt="Elgeyo Marakwet County" onerror="this.parentElement.innerHTML='Elgeyo Marakwet County'"></div>
-          <div class="partner-logo"><img src="baringo.png" alt="baringo" onerror="this.parentElement.innerHTML='baringo'"></div>
-          <div class="partner-logo"><img src="nakuru.png" alt="nakuru" onerror="this.parentElement.innerHTML='nakuru'"></div>
-          <div class="partner-logo"><img src="uasin-gishu.png" alt="uasin-gishu" onerror="this.parentElement.innerHTML='uasin-gishu'"></div>
-          <div class="partner-logo"><img src="nandi.png" alt="nandi" onerror="this.parentElement.innerHTML='nandi'"></div>
-          <div class="partner-logo"><img src="trans-nzoia.png" alt="trans-nzoia" onerror="this.parentElement.innerHTML='trans-nzoia'"></div>
-          <div class="partner-logo"><img src="logos/kfs.png" alt="Kenya Forest Service" onerror="this.parentElement.innerHTML='Kenya Forest Service'"></div>
-          <div class="partner-logo"><img src="logos/kefri.png" alt="KEFRI" onerror="this.parentElement.innerHTML='KEFRI'"></div>
-          <div class="partner-logo"><img src="logos/wruas.png" alt="WRUAS" onerror="this.parentElement.innerHTML='WRUAS'"></div>
+          <div class="partner-logo">Elgeyo Marakwet County</div>
+          <div class="partner-logo">Baringo County</div>
+          <div class="partner-logo">Nakuru County</div>
+          <div class="partner-logo">Uasin Gishu County</div>
+          <div class="partner-logo">Nandi County</div>
+          <div class="partner-logo">Trans Nzoia County</div>
+          <div class="partner-logo">Elgeyo Marakwet County</div>
+          <div class="partner-logo">Baringo County</div>
         </div>
       </div>
     </section>
@@ -1242,37 +952,34 @@
         <div class="section-header">
           <h2 class="section-title">How We Work</h2>
         </div>
-        <div class="process-timeline">
-          <div class="timeline-line"></div>
-          <div class="process-steps">
-            <div class="process-step">
-              <div class="step-circle">
-                <span class="step-number">1</span>
-              </div>
-              <h4 class="step-title">Initial Consultation</h4>
-              <p class="step-description">We listen to your goals and assess your current environmental position.</p>
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="step-circle">
+              <span class="step-number">1</span>
             </div>
-            <div class="process-step">
-              <div class="step-circle">
-                <span class="step-number">2</span>
-              </div>
-              <h4 class="step-title">Strategy Development</h4>
-              <p class="step-description">Our experts create a customized roadmap aligned with your objectives.</p>
+            <h4 class="step-title">Initial Consultation</h4>
+            <p class="step-description">We listen to your goals and assess your current environmental position.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-circle">
+              <span class="step-number">2</span>
             </div>
-            <div class="process-step">
-              <div class="step-circle">
-                <span class="step-number">3</span>
-              </div>
-              <h4 class="step-title">Implementation</h4>
-              <p class="step-description">We guide you through executing sustainable solutions with measurable results.</p>
+            <h4 class="step-title">Strategy Development</h4>
+            <p class="step-description">Our experts create a customized roadmap aligned with your objectives.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-circle">
+              <span class="step-number">3</span>
             </div>
-            <div class="process-step">
-              <div class="step-circle">
-                <span class="step-number">4</span>
-              </div>
-              <h4 class="step-title">Monitoring & Support</h4>
-              <p class="step-description">Ongoing tracking, reporting, and optimization to ensure long-term success.</p>
+            <h4 class="step-title">Implementation</h4>
+            <p class="step-description">We guide you through executing sustainable solutions with measurable results.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-circle">
+              <span class="step-number">4</span>
             </div>
+            <h4 class="step-title">Monitoring & Support</h4>
+            <p class="step-description">Ongoing tracking, reporting, and optimization to ensure long-term success.</p>
           </div>
         </div>
       </div>
@@ -1294,12 +1001,12 @@
     <section class="testimonials">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">Client Success Stories</h2>
-          <p class="section-subtitle">Hear from organizations we've partnered with on their sustainability journey</p>
+          <h2 class="section-title">Community Success Stories</h2>
+          <p class="section-subtitle">Hear from communities and organizations we've worked with on their path to sustainability</p>
         </div>
         <div class="testimonials-grid">
           <div class="testimonial-card">
-            <p class="testimonial-text">EarthWay Alliance helped us cut emissions by significant amounts in under a year!</p>
+            <p class="testimonial-text">Thanks to EarthWay Alliance, our land is greener again, and our cows produce more milk giving our families a better income.</p>
             <div class="testimonial-author">
               <div class="author-avatar">A</div>
               <div class="author-info">
@@ -1379,7 +1086,7 @@
             <div class="blog-content">
               <h3 class="blog-title">Transition to Renewable Energy</h3>
               <p class="blog-description">Now is the best time to go green with your energy supply and reduce carbon footprint.</p>
-              <a href="#" class="blog-btn coming-soon">Coming Soon</a>
+              <a href="#" class="blog-btn" style="background: #666; cursor: not-allowed;">Coming Soon</a>
             </div>
           </div>
         </div>
@@ -1484,7 +1191,6 @@
       document.getElementById('nav-links').classList.toggle('active');
     });
 
-    // Counter Animation
     const counters = document.querySelectorAll('.counter');
     const speed = 200;
 
@@ -1505,11 +1211,7 @@
       updateCounter();
     };
 
-    // Intersection Observer for counters
-    const observerOptions = {
-      threshold: 0.5
-    };
-
+    const observerOptions = { threshold: 0.5 };
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -1522,7 +1224,6 @@
 
     counters.forEach(counter => observer.observe(counter));
 
-    // Office Hours Status Checker
     function updateOfficeStatus() {
       const now = new Date();
       const day = now.getDay();
@@ -1548,38 +1249,6 @@
 
     updateOfficeStatus();
     setInterval(updateOfficeStatus, 60000);
-
-    // Search Modal Functionality
-    const searchBtn = document.getElementById('search-btn');
-    const searchModal = document.getElementById('search-modal');
-    const searchClose = document.getElementById('search-close');
-    const searchForm = document.getElementById('search-form');
-    const searchInput = document.getElementById('search-input');
-
-    searchBtn.addEventListener('click', () => {
-      searchModal.classList.add('active');
-      searchInput.focus();
-    });
-
-    searchClose.addEventListener('click', () => {
-      searchModal.classList.remove('active');
-    });
-
-    searchModal.addEventListener('click', (e) => {
-      if (e.target === searchModal) {
-        searchModal.classList.remove('active');
-      }
-    });
-
-    searchForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const query = searchInput.value.trim();
-      if (query) {
-        window.open(`https://www.google.com/search?q=${encodeURIComponent(query)}`, '_blank');
-        searchModal.classList.remove('active');
-        searchInput.value = '';
-      }
-    });
   </script>
 </body>
 </html>
